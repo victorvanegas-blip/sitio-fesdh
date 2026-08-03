@@ -24,7 +24,8 @@
     </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome con verificación SRI integrada para mayor seguridad -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <style>
         .dropdown:hover .dropdown-menu {
@@ -43,7 +44,7 @@
 </head>
 <body class="bg-udelasBg text-slate-800 antialiased selection:bg-udelasDark selection:text-white">
 
-    <!-- PANTALLA DE CARGA (PRELOADER INSTITUCIONAL BLANCO) -->
+    <!-- PANTALLA DE CARGA -->
     <div id="preloader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white transition-opacity duration-500">
         <div class="flex flex-col items-center space-y-8 max-w-sm px-4">
             <img src="logotipo_de_la_fesdh.png" alt="FESDH" class="h-44 sm:h-52 w-auto object-contain animate-pulse">
@@ -82,10 +83,10 @@
                             <a href="#coases" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-udelasDark transition">
                                 <i class="fa-solid fa-hand-holding-heart mr-2 text-udelasLight"></i> COASES
                             </a>
-                            <a href="https://forms.gle/g1b6VYzVLWoL1ZnGA" target="_blank" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-udelasDark transition">
+                            <a href="https://forms.gle/g1b6VYzVLWoL1ZnGA" target="_blank" rel="noopener noreferrer" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-udelasDark transition">
                                 <i class="fa-solid fa-file-signature mr-2 text-udelasLight"></i> Certificación Docente Admin.
                             </a>
-                            <a href="https://victorvanegas-blip.github.io/auditorio-fesdh/" target="_blank" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-udelasDark transition">
+                            <a href="https://victorvanegas-blip.github.io/auditorio-fesdh/" target="_blank" rel="noopener noreferrer" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-udelasDark transition">
                                 <i class="fa-solid fa-calendar-check mr-2 text-udelasLight"></i> Reserva de Auditorio
                             </a>
                         </div>
@@ -115,10 +116,10 @@
                 <a href="#coases" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark pl-3 py-1">
                     <i class="fa-solid fa-hand-holding-heart mr-2 text-udelasLight text-xs"></i> COASES
                 </a>
-                <a href="https://forms.gle/g1b6VYzVLWoL1ZnGA" target="_blank" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark pl-3 py-1">
+                <a href="https://forms.gle/g1b6VYzVLWoL1ZnGA" target="_blank" rel="noopener noreferrer" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark pl-3 py-1">
                     <i class="fa-solid fa-file-signature mr-2 text-udelasLight text-xs"></i> Certificación Docente Admin.
                 </a>
-                <a href="https://victorvanegas-blip.github.io/auditorio-fesdh/" target="_blank" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark pl-3 py-1">
+                <a href="https://victorvanegas-blip.github.io/auditorio-fesdh/" target="_blank" rel="noopener noreferrer" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark pl-3 py-1">
                     <i class="fa-solid fa-calendar-check mr-2 text-udelasLight text-xs"></i> Reserva de Auditorio
                 </a>
             </div>
@@ -220,7 +221,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN RECURSOS ACADÉMICOS -->
+        <!-- RECURSOS ACADÉMICOS -->
         <section id="recursos" class="py-24 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
             <div class="max-w-7xl mx-auto space-y-12">
                 <div class="text-center space-y-3">
@@ -241,7 +242,7 @@
                             <p class="text-xs text-slate-500">Consulta las programaciones horarias, salones y asignaturas correspondientes al semestre en curso.</p>
                         </div>
                         <div class="pt-5">
-                            <a href="https://drive.google.com/drive/folders/1Ze0iqxqlMQutxiQj03oj0ESHU9HY7P1q?usp=drive_link" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-udelasLight transition shadow-sm">
+                            <a href="https://drive.google.com/drive/folders/1Ze0iqxqlMQutxiQj03oj0ESHU9HY7P1q?usp=drive_link" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-udelasLight transition shadow-sm">
                                 <i class="fa-solid fa-folder-open mr-1.5 text-udelasLight"></i> VER HORARIOS
                             </a>
                         </div>
@@ -257,7 +258,7 @@
                             <p class="text-xs text-slate-500">Mantente al día con los comunicados oficiales, eventos, efemérides y noticias de la FESDH.</p>
                         </div>
                         <div class="pt-5">
-                            <a href="https://drive.google.com/drive/folders/1tgV15si_iRAK8cJ2zb8hV6KGaXCuDUTX?usp=drive_link" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-udelasLight transition shadow-sm">
+                            <a href="https://drive.google.com/drive/folders/1tgV15si_iRAK8cJ2zb8hV6KGaXCuDUTX?usp=drive_link" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-udelasLight transition shadow-sm">
                                 <i class="fa-solid fa-folder-open mr-1.5 text-udelasLight"></i> VER BOLETINES
                             </a>
                         </div>
@@ -273,7 +274,7 @@
                             <p class="text-xs text-slate-500">Descarga solicitudes de trámites, guías de anteproyectos, plantillas y formularios estudiantiles.</p>
                         </div>
                         <div class="pt-5">
-                            <a href="https://drive.google.com/drive/folders/1k_IS5Tm1k36PWgNLHED-a2o5z1gA1SY7?usp=drive_link" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-udelasLight transition shadow-sm">
+                            <a href="https://drive.google.com/drive/folders/1k_IS5Tm1k36PWgNLHED-a2o5z1gA1SY7?usp=drive_link" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-udelasLight transition shadow-sm">
                                 <i class="fa-solid fa-folder-open mr-1.5 text-udelasLight"></i> VER FORMATOS
                             </a>
                         </div>
@@ -298,19 +299,18 @@
                             <i class="fa-solid fa-envelope text-udelasLight mr-2"></i> Correo: Por confirmar
                         </p>
                     </div>
-                    <a href="https://maps.app.goo.gl/dqXXeov1bVw7z7Vz9" target="_blank" class="w-full py-3.5 text-center text-sm font-bold bg-udelasDark text-white hover:bg-slate-800 rounded-xl transition shadow-md block">
+                    <a href="https://maps.app.goo.gl/dqXXeov1bVw7z7Vz9" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 text-center text-sm font-bold bg-udelasDark text-white hover:bg-slate-800 rounded-xl transition shadow-md block">
                         <i class="fa-solid fa-route mr-1 text-udelasLight"></i> VER EN GOOGLE MAPS
                     </a>
                 </div>
                 <div class="lg:col-span-7 min-h-[380px] bg-white border p-2 rounded-3xl shadow-xl overflow-hidden relative flex">
-                    <!-- SE INTEGRÓ EL EMBED CON PIN INTEGRADO AQUÍ ABAJO -->
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15763.45663737213!2d-79.5548074!3d8.987342!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca8f4803db19b%3A0xc3f6087b7a151b75!2sUniversidad%20Especializada%20de%20las%20Am%C3%A9ricas%20(UDELAS)!5e0!3m2!1ses-419!2spa!4v1721500410000!5m2!1ses-419!2spa" class="w-full h-full min-h-[360px] rounded-2xl border-0" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER INSTITUCIONAL LIMPIO (SÓLO TEXTO) -->
+    <!-- FOOTER -->
     <footer class="bg-slate-950 text-white pt-16 pb-12 px-4 border-t border-slate-900 shadow-inner">
         <div class="max-w-4xl mx-auto text-center space-y-6">
             
@@ -323,7 +323,7 @@
 
             <p class="text-[11px] text-slate-500 font-medium tracking-wide">
                 FESDH © 2026. Sitio Informativo Autorizado de la Facultad. <br class="sm:hidden"> Todos los derechos reservados. 
-                Visite portal oficial: <a href="https://www.udelas.ac.pa" target="_blank" class="text-udelasLight font-semibold hover:underline">udelas.ac.pa</a>
+                Visite portal oficial: <a href="https://www.udelas.ac.pa" target="_blank" rel="noopener noreferrer" class="text-udelasLight font-semibold hover:underline">udelas.ac.pa</a>
             </p>
         </div>
     </footer>
@@ -483,7 +483,7 @@
                     </div>
                     <div class="bg-blue-50/40 p-5 rounded-2xl border border-blue-100 text-xs">
                         <h4 class="font-bold text-udelasDark text-sm mb-3"><i class="fa-solid fa-address-book text-udelasLight mr-2"></i> Contáctanos</h4>
-                        <p class="text-udelasDark font-semibold">WhatsApp: <a href="https://wa.me/50769852731" target="_blank" class="text-udelasLight hover:underline font-bold">6985-2731</a></p>
+                        <p class="text-udelasDark font-semibold">WhatsApp: <a href="https://wa.me/50769852731" target="_blank" rel="noopener noreferrer" class="text-udelasLight hover:underline font-bold">6985-2731</a></p>
                         <p class="text-udelasDark font-semibold">Correo: coases@udelas.ac.pa</p>
                     </div>
                 </div>
