@@ -97,7 +97,7 @@ const infoCarreras = {
       "resumen": "Forma profesionales capaces de analizar e investigar hechos delictivos mediante la aplicación del método científico y la criminalística.",
       "descripcion": "Esta carrera ofrece formación científica y técnica para identificar y analizar conductas delictivas, procesar escenas del crimen y manejar indicios que sustenten procesos judiciales.",
       "ingreso": ["Título de Bachiller avalado por el MEDUCA", "Aprobar las pruebas de admisión de la UDELAS", "Certificados de salud física y mental", "Récord policial limpio"],
-      "egreso": "El egresado es un profesional competente para aplicar el método científico en la investigación criminal, fijar evidencias y coordinar planes estratégicos de seguridad.",
+      "egreso": "El egresado es un profesional competente para aplicar el método científico en la investigación criminal, fijar evidencias y coordinar plans estratégicos de seguridad.",
       "campo": "Ministerio Público, Dirección de Investigación Judicial (DIJ), IMELCF, empresas de seguridad privada y departamentos de seguridad corporativa.",
       "coordinacion": {
         "nombre": "Lic. Adolfo Antonio De La Rosa Ubarte",
@@ -132,7 +132,7 @@ const infoCarreras = {
       "descripcion": "La información detallada, plan de estudios y requisitos específicos de ingreso y egreso para la carrera de Gestión Cultural y Folklore se publicarán próximamente.",
       "ingreso": ["Información en actualización por la facultad."],
       "egreso": "Información en actualización por la facultad.",
-      "campo": "Centros culturales, museums, instituciones de patrimonio histórico y organizaciones folclóricas.",
+      "campo": "Centros culturales, museos, instituciones de patrimonio histórico y organizaciones folclóricas.",
       "coordinacion": {
         "nombre": "Por asignar / En actualización",
         "correo": "fesdh@udelas.ac.pa",
