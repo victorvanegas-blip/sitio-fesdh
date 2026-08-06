@@ -43,7 +43,7 @@
 </head>
 <body class="bg-udelasBg text-slate-800 antialiased selection:bg-udelasDark selection:text-white">
 
-    <!-- PANTALLA DE CARGA (PRELOADER INSTITUCIONAL BLANCO) -->
+    <!-- PANTALLA DE CARGA -->
     <div id="preloader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white transition-opacity duration-500">
         <div class="flex flex-col items-center space-y-8 max-w-sm px-4">
             <img src="logotipo_de_la_fesdh.png" alt="FESDH" class="h-44 sm:h-52 w-auto object-contain animate-pulse">
@@ -59,7 +59,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-28">
                 
-                <!-- LOGOS JUNTOS -->
+                <!-- LOGOS -->
                 <div class="flex items-center space-x-4 sm:space-x-6 flex-shrink-0">
                     <a href="#inicio" class="hover:opacity-90 transition duration-200 block">
                         <img src="logotipo_de_la_fesdh.png" alt="Logotipo FESDH" class="h-20 sm:h-22 w-auto object-contain">
@@ -68,13 +68,13 @@
                     <img src="logo_udelas.png" alt="Logo UDELAS" class="h-14 sm:h-16 w-auto object-contain hidden sm:block">
                 </div>
 
-                <!-- MENÚ DE NAVEGACIÓN -->
+                <!-- MENÚ DE NAVEGACIÓN DESKTOP -->
                 <div class="hidden md:flex items-center space-x-7">
                     <a href="#nosotros" class="text-sm font-semibold text-slate-600 hover:text-udelasDark transition">Nosotros</a>
                     <a href="#carreras" class="text-sm font-semibold text-slate-600 hover:text-udelasDark transition">Carreras</a>
                     <a href="#galeria" class="text-sm font-semibold text-slate-600 hover:text-udelasDark transition">Galería</a>
                     
-                    <!-- DROPDOWN DE SERVICIOS -->
+                    <!-- DROPDOWN -->
                     <div class="relative dropdown py-4">
                         <button class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark transition focus:outline-none">
                             Servicios <i class="fa-solid fa-chevron-down ml-1.5 text-[10px] text-slate-400"></i>
@@ -106,7 +106,7 @@
             </div>
         </div>
 
-        <!-- Menú Desplegable Móvil -->
+        <!-- Menú Móvil -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2 shadow-lg">
             <a href="#nosotros" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-udelasDark py-2 border-b border-slate-100">Nosotros</a>
             <a href="#carreras" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-udelasDark py-2 border-b border-slate-100">Carreras</a>
@@ -156,7 +156,6 @@
                     </div>
                 </div>
 
-                <!-- IMAGEN ESTÁTICA PRINCIPAL -->
                 <div class="lg:col-span-5">
                     <div class="relative w-full h-[380px] sm:h-[420px] bg-slate-900 rounded-3xl shadow-2xl overflow-hidden border border-white/10 flex items-center justify-center">
                         <img src="carrusel1.jpg" alt="Instalaciones de la FESDH" class="w-full h-full object-contain" onerror="this.src='edificio_de_la_fesdh.jpg'">
@@ -200,7 +199,7 @@
             </div>
         </section>
 
-        <!-- GALERÍA DE EVENTOS -->
+        <!-- GALERÍA DE EVENTOS Y MULTIMEDIA -->
         <section id="galeria" class="py-24 bg-slate-50 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
             <div class="max-w-7xl mx-auto space-y-12">
                 <div class="text-center space-y-3">
@@ -213,7 +212,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
                     <!-- Tarjeta 1: Vídeo Investigador Criminal -->
-                    <div onclick="openVideoModal('https://player.vimeo.com/video/1216108229?autoplay=1')" class="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300 cursor-pointer group">
+                    <div onclick="openVideoModal('1216108229', 'Día del Investigador Criminal')" class="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300 cursor-pointer group">
                         <div class="relative h-48 bg-slate-900 overflow-hidden">
                             <img src="https://res.cloudinary.com/jnlnezib/image/upload/v1786027220/Dia%20del%20Investigador%20Criminal/IMG_0147_o3qqna.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Vídeo Investigador Criminal">
                             <div class="absolute inset-0 bg-slate-950/30 flex items-center justify-center">
@@ -260,7 +259,7 @@
                     </div>
 
                     <!-- Tarjeta 4: Vídeo Aniversario FESDH -->
-                    <div onclick="openVideoModal('https://player.vimeo.com/video/1216148130?autoplay=1')" class="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300 cursor-pointer group">
+                    <div onclick="openVideoModal('1216148130', 'Aniversario de la FESDH')" class="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300 cursor-pointer group">
                         <div class="relative h-48 bg-slate-900 overflow-hidden">
                             <img src="https://res.cloudinary.com/jnlnezib/image/upload/v1786027084/Dia%20del%20Investigador%20Criminal/IMG_0028_ycfowu.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Aniversario FESDH">
                             <div class="absolute inset-0 bg-slate-950/30 flex items-center justify-center">
@@ -280,7 +279,7 @@
             </div>
         </section>
 
-        <!-- COASES CON CÓDIGO QR PARA CITAS -->
+        <!-- COASES -->
         <section id="coases" class="py-24 bg-gradient-to-b from-slate-50 to-slate-100 px-4 border-b border-slate-200">
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                 <div class="lg:col-span-7 space-y-6">
@@ -297,7 +296,6 @@
                     </div>
                 </div>
 
-                <!-- TARJETA CÓDIGO QR SOLICITUD DE CITAS -->
                 <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-slate-200 shadow-xl text-center space-y-4">
                     <div class="space-y-1">
                         <span class="text-[10px] font-extrabold text-udelasLight uppercase tracking-wider">Citas En Línea</span>
@@ -326,7 +324,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Tarjeta 1: Horarios -->
                     <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-md transition">
                         <div class="space-y-3">
                             <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-udelasDark text-xl">
@@ -342,7 +339,6 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta 2: Boletines -->
                     <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-md transition">
                         <div class="space-y-3">
                             <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 text-xl">
@@ -358,7 +354,6 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta 3: Formatos -->
                     <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-md transition">
                         <div class="space-y-3">
                             <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 text-xl">
@@ -404,7 +399,7 @@
         </section>
     </main>
 
-    <!-- FOOTER INSTITUCIONAL -->
+    <!-- FOOTER -->
     <footer class="bg-slate-950 text-white pt-16 pb-12 px-4 border-t border-slate-900 shadow-inner">
         <div class="max-w-4xl mx-auto text-center space-y-6">
             <div class="space-y-3">
@@ -419,7 +414,7 @@
         </div>
     </footer>
 
-    <!-- MODAL GLOBAL DE INFORMACIÓN -->
+    <!-- MODAL GLOBAL -->
     <div id="global-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300">
         <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative border border-slate-200/60 transition-transform duration-300 transform scale-100">
             <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 text-slate-500 hover:bg-udelasDark hover:text-white flex items-center justify-center transition duration-200 shadow-sm z-10 focus:outline-none" title="Cerrar ventana">
@@ -429,12 +424,12 @@
         </div>
     </div>
 
-    <!-- MODAL DE MULTIMEDIA (VISOR DE FOTOS Y REPRODUCTOR DE VÍDEO) -->
+    <!-- MODAL DE MULTIMEDIA (VÍDEOS Y FOTOS CORREGIDO) -->
     <div id="gallery-modal" class="fixed inset-0 z-[60] bg-slate-950/90 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300" onclick="closeGalleryModalOnOuterClick(event)">
         <div class="bg-slate-900 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative border border-white/10 flex flex-col">
             
             <!-- Botón Cerrar -->
-            <button onclick="closeGalleryModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 text-white hover:bg-red-600 flex items-center justify-center transition duration-200 z-20 focus:outline-none">
+            <button onclick="closeGalleryModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-red-600 flex items-center justify-center transition duration-200 z-30 focus:outline-none">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
@@ -443,18 +438,18 @@
                 <iframe id="vimeo-iframe" class="w-full h-full border-0" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
 
-            <!-- Contenedor Visor Fotos Cloudinary -->
+            <!-- Contenedor Visor Fotos -->
             <div id="photo-container" class="relative w-full h-[55vh] max-h-[500px] bg-black hidden flex items-center justify-center overflow-hidden">
-                <button onclick="prevPhoto()" class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 text-white hover:bg-udelasLight flex items-center justify-center transition z-10">
+                <button id="btn-prev-photo" onclick="prevPhoto(event)" class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 text-white hover:bg-udelasLight flex items-center justify-center transition z-20 cursor-pointer">
                     <i class="fa-solid fa-chevron-left text-lg"></i>
                 </button>
-                <img id="current-modal-img" src="" class="max-w-full max-h-full object-contain" alt="Foto evento">
-                <button onclick="nextPhoto()" class="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 text-white hover:bg-udelasLight flex items-center justify-center transition z-10">
+                <img id="current-modal-img" src="" class="max-w-full max-h-full object-contain select-none" alt="Foto evento">
+                <button id="btn-next-photo" onclick="nextPhoto(event)" class="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 text-white hover:bg-udelasLight flex items-center justify-center transition z-20 cursor-pointer">
                     <i class="fa-solid fa-chevron-right text-lg"></i>
                 </button>
             </div>
 
-            <!-- Información / Pie de Foto -->
+            <!-- Pie de Foto / Información -->
             <div class="p-6 bg-slate-900 border-t border-white/10 text-white space-y-2">
                 <div id="photo-counter-badge" class="inline-block bg-udelasDark text-udelasLight text-[11px] font-bold px-3 py-1 rounded-md hidden">
                     Imagen 1 de 7
@@ -472,10 +467,12 @@
         // Ocultar preloader
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
-            setTimeout(() => {
-                preloader.classList.add('opacity-0', 'pointer-events-none');
-                setTimeout(() => preloader.remove(), 500);
-            }, 1500);
+            if (preloader) {
+                setTimeout(() => {
+                    preloader.classList.add('opacity-0', 'pointer-events-none');
+                    setTimeout(() => preloader.remove(), 500);
+                }, 1200);
+            }
         });
 
         function toggleMenu() {
@@ -493,14 +490,17 @@
         }
 
         function inicializarCarreras() {
-            renderCarreras();
+            if (typeof renderCarreras === 'function') {
+                renderCarreras();
+            }
         }
 
         function renderCarreras() {
             const grid = document.getElementById('grid-carreras');
+            if (!grid) return;
             grid.innerHTML = '';
 
-            const lista = infoCarreras.licenciaturas || [];
+            const lista = (typeof infoCarreras !== 'undefined' && infoCarreras.licenciaturas) ? infoCarreras.licenciaturas : [];
             if(lista.length === 0) {
                 grid.innerHTML = '<p class="text-slate-500 text-sm col-span-1 md:col-span-2 lg:col-span-3 text-center py-8">Próximamente se añadirán más carreras.</p>';
                 return;
@@ -624,11 +624,11 @@
             document.body.classList.remove('overflow-hidden');
         }
 
-        /* --- GALERÍA MULTIMEDIA --- */
+        /* --- GALERÍA MULTIMEDIA CORREGIDA --- */
         const photoAlbums = {
             'investigador_criminal': {
                 title: 'El Investigador Criminal en el Siglo XXI',
-                description: 'Bajo el lema "Conocimiento, ciencia y compromiso al servicio de la justicia", la Coordinación de la Carrera de Investigación Criminal y Seguridad, junto al Lic. Adolfo de la Rosa, realizó este seminario el 1 de julio en el Auditorio del Edificio 807.',
+                description: 'Bajo el lema "Conocimiento, ciencia y compromiso al servicio de la justicia", la Coordinación de la Carrera de Investigación Criminal y Seguridad realizó este seminario el 1 de julio.',
                 photos: [
                     'https://res.cloudinary.com/jnlnezib/image/upload/v1786027220/Dia%20del%20Investigador%20Criminal/IMG_0147_o3qqna.jpg',
                     'https://res.cloudinary.com/jnlnezib/image/upload/v1786027239/Dia%20del%20Investigador%20Criminal/IMG_0129_ijtpvd.jpg',
@@ -641,7 +641,7 @@
             },
             'lengua_senas': {
                 title: 'Presentación Artística: Con las Manos en el Escenario',
-                description: 'Celebración de arte e inclusión realizada el sábado 4 de julio en el Auditorio Roy Tejeira. Organizada por la Mgtr. Raquel Arrué con docentes y estudiantes de Traducción e Interpretación en Lengua de Señas.',
+                description: 'Celebración de arte e inclusión realizada en el Auditorio Roy Tejeira por docentes y estudiantes de la Licenciatura en Lengua de Señas.',
                 photos: [
                     'https://res.cloudinary.com/jnlnezib/image/upload/v1786029798/IMG_7925_zscsol.jpg',
                     'https://res.cloudinary.com/jnlnezib/image/upload/v1786029778/IMG_7926_ars73f.jpg',
@@ -657,22 +657,24 @@
         let currentAlbumKey = null;
         let currentPhotoIndex = 0;
 
-        function openVideoModal(videoUrl) {
+        function openVideoModal(videoId, titulo) {
             document.getElementById('photo-container').classList.add('hidden');
             document.getElementById('photo-counter-badge').classList.add('hidden');
             
             const iframe = document.getElementById('vimeo-iframe');
-            iframe.src = videoUrl;
+            iframe.src = `https://player.vimeo.com/video/${videoId}?autoplay=1`;
             document.getElementById('video-container').classList.remove('hidden');
 
-            document.getElementById('gallery-modal-title').innerText = "Reproductor de Vídeo";
-            document.getElementById('gallery-modal-desc').innerText = "";
+            document.getElementById('gallery-modal-title').innerText = titulo || "Reproductor de Vídeo";
+            document.getElementById('gallery-modal-desc').innerText = "Reproducción de vídeo institucional FESDH.";
 
             document.getElementById('gallery-modal').classList.remove('hidden');
             document.body.classList.add('overflow-hidden');
         }
 
         function openPhotoModal(albumKey) {
+            if (!photoAlbums[albumKey]) return;
+
             currentAlbumKey = albumKey;
             currentPhotoIndex = 0;
 
@@ -688,24 +690,28 @@
         }
 
         function updatePhotoViewer() {
+            if (!currentAlbumKey || !photoAlbums[currentAlbumKey]) return;
             const album = photoAlbums[currentAlbumKey];
-            if (!album) return;
 
-            document.getElementById('current-modal-img').src = album.photos[currentPhotoIndex];
+            const img = document.getElementById('current-modal-img');
+            img.src = album.photos[currentPhotoIndex];
+            
             document.getElementById('gallery-modal-title').innerText = album.title;
             document.getElementById('gallery-modal-desc').innerText = album.description;
             document.getElementById('photo-counter-badge').innerText = `Imagen ${currentPhotoIndex + 1} de ${album.photos.length}`;
         }
 
-        function nextPhoto() {
-            if (!currentAlbumKey) return;
+        function nextPhoto(e) {
+            if (e) e.stopPropagation();
+            if (!currentAlbumKey || !photoAlbums[currentAlbumKey]) return;
             const album = photoAlbums[currentAlbumKey];
             currentPhotoIndex = (currentPhotoIndex + 1) % album.photos.length;
             updatePhotoViewer();
         }
 
-        function prevPhoto() {
-            if (!currentAlbumKey) return;
+        function prevPhoto(e) {
+            if (e) e.stopPropagation();
+            if (!currentAlbumKey || !photoAlbums[currentAlbumKey]) return;
             const album = photoAlbums[currentAlbumKey];
             currentPhotoIndex = (currentPhotoIndex - 1 + album.photos.length) % album.photos.length;
             updatePhotoViewer();
@@ -725,7 +731,7 @@
 
         document.addEventListener('keydown', function(e) {
             const modal = document.getElementById('gallery-modal');
-            if (!modal.classList.contains('hidden') && currentAlbumKey) {
+            if (modal && !modal.classList.contains('hidden') && currentAlbumKey) {
                 if (e.key === 'ArrowRight') nextPhoto();
                 if (e.key === 'ArrowLeft') prevPhoto();
                 if (e.key === 'Escape') closeGalleryModal();
