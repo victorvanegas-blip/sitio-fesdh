@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FESDH - Facultad de Educación Social y Desarrollo Humano</title>
-    <!-- Tailwind CSS CDN -->
+    <title>FESDH - Facultad de Educación Social y Desarrollo Humano | UDELAS</title>
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/jnlnezib/image/upload/f_auto,q_auto/v1/logofesdh">
+    
+    <!-- CDN de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Font Icons -->
+    <!-- FontAwesome para Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Configuración de Colores Institucionales -->
     <script>
         tailwind.config = {
             theme: {
@@ -22,66 +25,111 @@
         }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-udelasLight selection:text-white">
 
-    <!-- NAVEGACIÓN -->
+    <!-- BARRA DE NAVEGACIÓN -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-                <img src="https://res.cloudinary.com/jnlnezib/image/upload/f_auto,q_auto/v1/logofesdh" alt="Logo FESDH" class="h-12 w-auto">
-                <img src="https://res.cloudinary.com/jnlnezib/image/upload/f_auto,q_auto/v1/logoudelas" alt="Logo UDELAS" class="h-12 w-auto hidden sm:block">
-            </div>
+            
+            <!-- Logotipos -->
+            <a href="#inicio" class="flex items-center space-x-4 group">
+                <img src="https://res.cloudinary.com/jnlnezib/image/upload/f_auto,q_auto/v1/logofesdh" alt="Logo FESDH" class="h-12 w-auto group-hover:scale-105 transition duration-200">
+                <img src="https://res.cloudinary.com/jnlnezib/image/upload/f_auto,q_auto/v1/logoudelas" alt="Logo UDELAS" class="h-12 w-auto hidden sm:block border-l border-slate-200 pl-4">
+            </a>
 
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-700">
+            <!-- Menú Navegación Escritorio -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-700">
                 <a href="#coases" class="hover:text-udelasLight transition">Nosotros</a>
+                <a href="#carreras" class="hover:text-udelasLight transition">Carreras</a>
                 <a href="#galeria" class="hover:text-udelasLight transition">Galería</a>
                 <a href="#coases" class="hover:text-udelasLight transition">Servicios</a>
                 <a href="#contacto" class="hover:text-udelasLight transition">Contacto</a>
             </nav>
+
+            <!-- Menú Móvil (Botón Hamburguesa) -->
+            <div class="md:hidden flex items-center">
+                <button onclick="toggleMobileMenu()" class="text-slate-700 hover:text-udelasLight focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 font-semibold text-slate-700">
+            <a href="#coases" onclick="toggleMobileMenu()" class="block py-2 hover:text-udelasLight border-b border-slate-100">Nosotros</a>
+            <a href="#carreras" onclick="toggleMobileMenu()" class="block py-2 hover:text-udelasLight border-b border-slate-100">Carreras</a>
+            <a href="#galeria" onclick="toggleMobileMenu()" class="block py-2 hover:text-udelasLight border-b border-slate-100">Galería</a>
+            <a href="#coases" onclick="toggleMobileMenu()" class="block py-2 hover:text-udelasLight border-b border-slate-100">Servicios</a>
+            <a href="#contacto" onclick="toggleMobileMenu()" class="block py-2 hover:text-udelasLight">Contacto</a>
         </div>
     </header>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <main>
+    <main id="inicio">
 
-        <!-- SECCIÓN COASES (Con botón accesible para móviles) -->
+        <!-- SECCIÓN HERO / BIENVENIDA -->
+        <section class="relative bg-gradient-to-br from-udelasDark via-slate-900 to-slate-800 text-white py-20 px-4 overflow-hidden">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+                <div class="lg:col-span-8 space-y-6 text-center lg:text-left">
+                    <span class="inline-block px-4 py-1.5 bg-udelasLight/20 text-udelasLight border border-udelasLight/30 rounded-full text-xs font-extrabold uppercase tracking-widest">
+                        Universidad Especializada de las Américas
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Facultad de Educación Social y Desarrollo Humano
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Formando profesionales altamente calificados con un alto compromiso social, ético e innovador para el desarrollo integral de la sociedad.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
+                        <a href="#carreras" class="px-8 py-3.5 bg-udelasLight hover:bg-sky-500 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg transition duration-200">
+                            VER OFERTA ACADÉMICA
+                        </a>
+                        <a href="#coases" class="px-8 py-3.5 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white text-xs sm:text-sm font-bold rounded-xl transition duration-200">
+                            SOLICITAR CITA EN COASES
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN COASES (Con botón accesible para móviles y código QR) -->
         <section id="coases" class="py-20 bg-gradient-to-b from-slate-50 to-slate-100 px-4 border-b border-slate-200">
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Info COASES -->
+                <!-- Descripción COASES -->
                 <div class="lg:col-span-7 space-y-6">
                     <span class="text-xs font-bold tracking-widest text-udelasLight uppercase block">Apoyo Estudiantil</span>
-                    <h1 class="text-3xl sm:text-4xl font-extrabold text-udelasDark leading-tight">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-udelasDark leading-tight">
                         Centro de Orientación y Atención Socioeducativa (COASES)
-                    </h1>
+                    </h2>
                     <div class="h-1 w-20 bg-udelasLight rounded"></div>
                     <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
                         Un espacio dentro de nuestra Facultad enfocado en brindarte las herramientas emocionales, psicológicas y académicas ideales para potenciar tu éxito universitario.
                     </p>
                     <div class="pt-2">
-                        <button onclick="alert('Ponte en contacto con COASES a través del formulario o visitando nuestras oficinas.')" class="inline-flex items-center justify-center px-6 py-3 text-xs font-bold bg-udelasDark text-white hover:bg-slate-800 rounded-xl transition shadow-md">
+                        <button onclick="alert('Ponte en contacto con COASES a través del formulario digital o visitando nuestras instalaciones en el campus.')" class="inline-flex items-center justify-center px-6 py-3 text-xs font-bold bg-udelasDark text-white hover:bg-slate-800 rounded-xl transition shadow-md">
                             <i class="fa-solid fa-circle-info mr-2 text-udelasLight"></i> VER MÁS INFORMACIÓN
                         </button>
                     </div>
                 </div>
 
-                <!-- Tarjeta QR y Acceso Móvil -->
+                <!-- Tarjeta Interactiva QR / Formulario Móvil -->
                 <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-slate-200 shadow-xl text-center space-y-5">
                     <div class="space-y-1">
                         <span class="text-[10px] font-extrabold text-udelasLight uppercase tracking-wider">Citas En Línea</span>
-                        <h2 class="text-lg font-bold text-udelasDark">Solicitud de Cita</h2>
+                        <h3 class="text-xl font-bold text-udelasDark">Solicitud de Cita</h3>
                     </div>
                     
-                    <!-- QR para Escritorio -->
+                    <!-- Código QR para Escritorio -->
                     <div class="bg-slate-50 p-4 rounded-2xl inline-block border border-slate-100 shadow-inner">
                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://forms.gle/TU_ENLACE_AQUI" alt="QR Formulario de Citas COASES" class="w-44 h-44 object-contain mx-auto">
                     </div>
                     
-                    <p class="text-xs font-semibold text-slate-500 max-w-xs mx-auto">
-                        Escanea el código QR o toca el botón si estás navegando desde tu teléfono:
+                    <p class="text-xs font-semibold text-slate-500 max-w-xs mx-auto leading-relaxed">
+                        Escanea el código QR con tu PC/móvil o toca el botón para acceder directamente al formulario:
                     </p>
 
-                    <!-- Botón para acceso directo (Móviles / Tablets) -->
+                    <!-- Botón directo pensado en navegación móvil -->
                     <div class="pt-1">
                         <a href="https://forms.gle/TU_ENLACE_AQUI" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 text-xs font-bold bg-udelasLight text-white hover:bg-udelasDark rounded-xl transition shadow-md gap-2">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i> ABRIR FORMULARIO DE CITA
@@ -91,7 +139,6 @@
 
             </div>
         </section>
-
 
         <!-- SECCIÓN GALERÍA MULTIMEDIA (Video único + Google Drive) -->
         <section id="galeria" class="py-24 bg-slate-900 text-white px-4 border-b border-slate-800">
@@ -110,7 +157,7 @@
                 <!-- Grid: Video + Tarjeta Drive -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                     
-                    <!-- 1. VIDEO INSTITUCIONAL -->
+                    <!-- 1. VIDEO DESTACADO -->
                     <div class="lg:col-span-7 bg-slate-800/60 border border-slate-700/60 rounded-3xl p-6 flex flex-col justify-between shadow-2xl backdrop-blur-sm hover:border-slate-600 transition duration-300">
                         <div class="space-y-4">
                             <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg bg-black">
@@ -132,7 +179,7 @@
                     <!-- 2. TARJETA GOOGLE DRIVE -->
                     <div class="lg:col-span-5 bg-gradient-to-br from-slate-800 to-slate-850 border border-slate-700/60 rounded-3xl p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-udelasLight/50 transition duration-300">
                         
-                        <!-- Efecto de luz de fondo -->
+                        <!-- Efecto visual de brillo -->
                         <div class="absolute -right-8 -bottom-8 w-40 h-40 bg-udelasLight/10 rounded-full blur-2xl group-hover:bg-udelasLight/20 transition duration-500 pointer-events-none"></div>
 
                         <div class="space-y-6 relative z-10">
@@ -150,7 +197,7 @@
                                 </p>
                             </div>
 
-                            <!-- Listado de Álbumes -->
+                            <!-- Listado de Destacados -->
                             <ul class="space-y-2 text-xs text-slate-400">
                                 <li class="flex items-center gap-2">
                                     <i class="fa-solid fa-check text-udelasLight text-[10px]"></i> Día del Investigador Criminal
@@ -164,7 +211,7 @@
                             </ul>
                         </div>
 
-                        <!-- Botón directo a Google Drive -->
+                        <!-- Botón directo hacia el Drive -->
                         <div class="pt-8 relative z-10">
                             <a href="https://drive.google.com/drive/folders/1dNFP_EuO-vRghjkZvUwdZ_pM4f0CklEc?usp=drive_link" 
                                target="_blank" 
@@ -186,10 +233,23 @@
     <!-- PIE DE PÁGINA -->
     <footer id="contacto" class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs text-center">
         <div class="max-w-7xl mx-auto px-4 space-y-4">
+            <div class="flex justify-center space-x-6 text-slate-400 text-lg mb-4">
+                <a href="#" class="hover:text-udelasLight transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-udelasLight transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-udelasLight transition"><i class="fa-brands fa-twitter"></i></a>
+            </div>
             <p class="font-semibold text-slate-300">Facultad de Educación Social y Desarrollo Humano - UDELAS</p>
             <p>© 2026 Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <!-- SCRIPT JS PRINCIPAL -->
+    <script>
+        // Función para abrir y cerrar el menú móvil en teléfonos
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
