@@ -424,7 +424,7 @@
         </div>
     </div>
 
-    <!-- MODAL MULTIMEDIA (VÍDEOS Y ÁLBUMES DE FOTOS CORREGIDO) -->
+    <!-- MODAL MULTIMEDIA (VÍDEOS Y ÁLBUMES DE FOTOS) -->
     <div id="gallery-modal" class="fixed inset-0 z-[60] bg-slate-950/90 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300" onclick="closeGalleryModalOnOuterClick(event)">
         <div class="bg-slate-900 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative border border-white/10 flex flex-col">
             
@@ -435,7 +435,7 @@
 
             <!-- Contenedor Responsive de Vídeo -->
             <div id="video-container" class="relative w-full aspect-video bg-black hidden flex items-center justify-center">
-                <!-- Se inyecta dinámicamente vía JS -->
+                <!-- Inyectado vía JS -->
             </div>
 
             <!-- Contenedor de Visor de Fotos -->
@@ -658,7 +658,7 @@
         let currentAlbumKey = null;
         let currentPhotoIndex = 0;
 
-        // Abrir Modal de Vídeo con parámetros de Vimeo integrados
+        // Abrir Modal de Vídeo
         function openVideoModal(videoId, titulo) {
             document.getElementById('photo-container').classList.add('hidden');
             document.getElementById('photo-counter-badge').classList.add('hidden');
@@ -666,13 +666,11 @@
             const videoContainer = document.getElementById('video-container');
             videoContainer.classList.remove('hidden');
             
-            // Inyección del iframe usando app_id=58479 y clase responsive
             videoContainer.innerHTML = `
                 <iframe 
                     src="https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1" 
                     class="w-full h-full border-0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                    allowfullscreen>
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share">
                 </iframe>
             `;
 
@@ -715,7 +713,7 @@
         }
 
         function nextPhoto(e) {
-            if (e) e.stopPropagation();
+            if (e && e.stopPropagation) e.stopPropagation();
             if (!currentAlbumKey || !photoAlbums[currentAlbumKey]) return;
             const album = photoAlbums[currentAlbumKey];
             currentPhotoIndex = (currentPhotoIndex + 1) % album.photos.length;
@@ -723,7 +721,7 @@
         }
 
         function prevPhoto(e) {
-            if (e) e.stopPropagation();
+            if (e && e.stopPropagation) e.stopPropagation();
             if (!currentAlbumKey || !photoAlbums[currentAlbumKey]) return;
             const album = photoAlbums[currentAlbumKey];
             currentPhotoIndex = (currentPhotoIndex - 1 + album.photos.length) % album.photos.length;
@@ -732,7 +730,6 @@
 
         function closeGalleryModal() {
             document.getElementById('gallery-modal').classList.add('hidden');
-            // Vaciar contenedor del vídeo para frenar la reproducción en segundo plano
             const videoContainer = document.getElementById('video-container');
             videoContainer.innerHTML = '';
             document.body.classList.remove('overflow-hidden');
@@ -754,7 +751,7 @@
                 }
             }
         });
-        
+
         window.onload = inicializarCarreras;
     </script>
 </body>
