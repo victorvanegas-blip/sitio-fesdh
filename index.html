@@ -4,755 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FESDH - Facultad de Educación Social y Desarrollo Humano</title>
-    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Font Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { 
-                        udelasDark: '#2B4380', 
-                        udelasLight: '#5B9FCA', 
-                        udelasBg: '#F4F8FA' 
-                    },
-                    fontFamily: { 
-                        sans: ['Plus Jakarta Sans', 'sans-serif'] 
+                    colors: {
+                        udelasDark: '#1b365d',
+                        udelasLight: '#00a3e0'
                     }
                 }
             }
         }
     </script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        .dropdown:hover .dropdown-menu {
-            display: block;
-            animation: fadeIn 0.2s ease-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes loading {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(200%); }
-        }
-    </style>
 </head>
-<body class="bg-udelasBg text-slate-800 antialiased selection:bg-udelasDark selection:text-white">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <!-- PANTALLA DE CARGA -->
-    <div id="preloader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white transition-opacity duration-500">
-        <div class="flex flex-col items-center space-y-8 max-w-sm px-4">
-            <img src="logotipo_de_la_fesdh.png" alt="FESDH" class="h-44 sm:h-52 w-auto object-contain animate-pulse">
-            <div class="w-56 h-1.5 bg-slate-100 rounded-full overflow-hidden relative border border-slate-200/50">
-                <div class="absolute inset-y-0 left-0 bg-udelasDark rounded-full w-1/2 animate-[loading_1.5s_infinite_ease-in-out]"></div>
+    <!-- NAVEGACIÓN -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <img src="https://res.cloudinary.com/jnlnezib/image/upload/f_auto,q_auto/v1/logofesdh" alt="Logo FESDH" class="h-12 w-auto">
+                <img src="https://res.cloudinary.com/jnlnezib/image/upload/f_auto,q_auto/v1/logoudelas" alt="Logo UDELAS" class="h-12 w-auto hidden sm:block">
             </div>
-            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest animate-pulse">Cargando Facultad</span>
-        </div>
-    </div>
 
-    <!-- BARRA DE NAVEGACIÓN -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-28">
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-700">
+                <a href="#coases" class="hover:text-udelasLight transition">Nosotros</a>
+                <a href="#galeria" class="hover:text-udelasLight transition">Galería</a>
+                <a href="#coases" class="hover:text-udelasLight transition">Servicios</a>
+                <a href="#contacto" class="hover:text-udelasLight transition">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- SECCIÓN COASES (Con botón accesible para móviles) -->
+        <section id="coases" class="py-20 bg-gradient-to-b from-slate-50 to-slate-100 px-4 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- LOGOS -->
-                <div class="flex items-center space-x-4 sm:space-x-6 flex-shrink-0">
-                    <a href="#inicio" class="hover:opacity-90 transition duration-200 block">
-                        <img src="logotipo_de_la_fesdh.png" alt="Logotipo FESDH" class="h-20 sm:h-22 w-auto object-contain">
-                    </a>
-                    <div class="h-12 w-[1px] bg-slate-200 hidden sm:block"></div>
-                    <img src="logo_udelas.png" alt="Logo UDELAS" class="h-14 sm:h-16 w-auto object-contain hidden sm:block">
-                </div>
-
-                <!-- MENÚ DE NAVEGACIÓN DESKTOP -->
-                <div class="hidden md:flex items-center space-x-7">
-                    <a href="#nosotros" class="text-sm font-semibold text-slate-600 hover:text-udelasDark transition">Nosotros</a>
-                    <a href="#carreras" class="text-sm font-semibold text-slate-600 hover:text-udelasDark transition">Carreras</a>
-                    <a href="#galeria" class="text-sm font-semibold text-slate-600 hover:text-udelasDark transition">Galería</a>
-                    
-                    <!-- DROPDOWN -->
-                    <div class="relative dropdown py-4">
-                        <button class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark transition focus:outline-none">
-                            Servicios <i class="fa-solid fa-chevron-down ml-1.5 text-[10px] text-slate-400"></i>
-                        </button>
-                        <div class="dropdown-menu hidden absolute left-0 mt-2 w-64 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 z-50">
-                            <a href="#coases" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-udelasDark transition">
-                                <i class="fa-solid fa-hand-holding-heart mr-2 text-udelasLight"></i> COASES
-                            </a>
-                            <a href="https://forms.gle/g1b6VYzVLWoL1ZnGA" target="_blank" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-udelasDark transition">
-                                <i class="fa-solid fa-file-signature mr-2 text-udelasLight"></i> Certificación Docente Admin.
-                            </a>
-                            <a href="https://victorvanegas-blip.github.io/auditorio-fesdh/" target="_blank" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-udelasDark transition">
-                                <i class="fa-solid fa-calendar-check mr-2 text-udelasLight"></i> Reserva de Auditorio
-                            </a>
-                        </div>
-                    </div>
-
-                    <a href="#recursos" class="text-sm font-semibold text-slate-600 hover:text-udelasDark transition">Recursos</a>
-                    <a href="#contacto" class="text-sm font-semibold text-slate-600 hover:text-udelasDark transition">Contacto</a>
-                </div>
-
-                <!-- Botón Menú Móvil -->
-                <div class="md:hidden flex items-center space-x-4">
-                    <img src="logo_udelas.png" alt="Logo UDELAS" class="h-12 w-auto object-contain sm:hidden">
-                    <button onclick="toggleMenu()" class="text-slate-600 hover:text-udelasDark focus:outline-none">
-                        <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Menú Móvil -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2 shadow-lg">
-            <a href="#nosotros" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-udelasDark py-2 border-b border-slate-100">Nosotros</a>
-            <a href="#carreras" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-udelasDark py-2 border-b border-slate-100">Carreras</a>
-            <a href="#galeria" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-udelasDark py-2 border-b border-slate-100">Galería</a>
-            
-            <div class="py-2 border-b border-slate-100 space-y-2">
-                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block px-1">Servicios</span>
-                <a href="#coases" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark pl-3 py-1">
-                    <i class="fa-solid fa-hand-holding-heart mr-2 text-udelasLight text-xs"></i> COASES
-                </a>
-                <a href="https://forms.gle/g1b6VYzVLWoL1ZnGA" target="_blank" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark pl-3 py-1">
-                    <i class="fa-solid fa-file-signature mr-2 text-udelasLight text-xs"></i> Certificación Docente Admin.
-                </a>
-                <a href="https://victorvanegas-blip.github.io/auditorio-fesdh/" target="_blank" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark pl-3 py-1">
-                    <i class="fa-solid fa-calendar-check mr-2 text-udelasLight text-xs"></i> Reserva de Auditorio
-                </a>
-            </div>
-
-            <a href="#recursos" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-udelasDark py-2 border-b border-slate-100">Recursos</a>
-            <a href="#contacto" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-udelasDark py-2 border-b border-slate-100">Contacto</a>
-        </div>
-    </nav>
-
-    <main class="pt-28">
-
-        <!-- INICIO -->
-        <section id="inicio" class="relative min-h-[calc(100vh-7rem)] flex items-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12">
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full text-xs font-semibold text-udelasLight tracking-wide uppercase">
-                        <span class="flex h-2 w-2 relative">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-udelasLight opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-udelasLight"></span>
-                        </span>
-                        <span>Sitio Informativo Autorizado</span>
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none">
-                        Facultad de Educación Social y <span class="text-transparent bg-clip-text bg-gradient-to-r from-udelasLight to-blue-200">Desarrollo Humano</span>
-                    </h1>
-                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
-                        Formamos profesionales comprometidos con la transformación social, la investigación criminal y el bienestar comunitario en Panamá.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#carreras" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-sm font-bold bg-udelasLight text-white hover:bg-opacity-90 rounded-2xl transition shadow-lg">
-                            EXPLORAR CARRERAS <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-5">
-                    <div class="relative w-full h-[380px] sm:h-[420px] bg-slate-900 rounded-3xl shadow-2xl overflow-hidden border border-white/10 flex items-center justify-center">
-                        <img src="carrusel1.jpg" alt="Instalaciones de la FESDH" class="w-full h-full object-contain" onerror="this.src='edificio_de_la_fesdh.jpg'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NOSOTROS -->
-        <section id="nosotros" class="py-24 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <span class="text-xs font-bold tracking-widest text-udelasLight uppercase block">Nuestra Historia</span>
-                    <h2 class="text-3xl font-extrabold text-udelasDark">¿Quiénes Somos?</h2>
-                    <div class="h-1 w-20 bg-udelasLight rounded"></div>
-                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                        La <span class="font-bold text-udelasDark">Universidad Especializada de las Américas (UDELAS)</span> fue creada en 1997 mediante la Ley 40, como la cuarta universidad oficial de la República de Panamá. En el año 2015 se reorganiza institucionalmente dando origen a la <span class="font-bold text-udelasDark">Facultad de Educación Social y Desarrollo Humano (FESDH)</span>, consolidando una oferta académica orientada al firme compromiso social.
-                    </p>
-                    <div class="pt-2">
-                        <button onclick="verInfoFacultad()" class="inline-flex items-center justify-center px-6 py-3 text-xs font-bold bg-udelasDark text-white hover:bg-slate-800 rounded-xl transition shadow-md">
-                            <i class="fa-solid fa-graduation-cap mr-2 text-udelasLight"></i> VER HISTORIA Y AUTORIDADES
-                        </button>
-                    </div>
-                </div>
-                <div class="lg:col-span-5 bg-white p-3 rounded-3xl border border-slate-200 shadow-xl">
-                    <img src="edificio_de_la_fesdh.jpg" alt="Edificio FESDH" class="w-full h-auto object-cover rounded-2xl">
-                </div>
-            </div>
-        </section>
-
-        <!-- CARRERAS -->
-        <section id="carreras" class="py-24 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
-            <div class="max-w-7xl mx-auto space-y-12">
-                <div class="text-center space-y-3">
-                    <span class="text-xs font-bold tracking-widest text-udelasLight uppercase block">Oferta Educativa</span>
-                    <h2 class="text-3xl font-extrabold text-udelasDark">Nuestras Carreras Académicas</h2>
-                    <div class="h-1 w-24 bg-udelasLight mx-auto rounded"></div>
-                </div>
-                <div id="grid-carreras" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-            </div>
-        </section>
-
-        <!-- GALERÍA DE EVENTOS Y MULTIMEDIA -->
-        <section id="galeria" class="py-24 bg-slate-50 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
-            <div class="max-w-7xl mx-auto space-y-12">
-                <div class="text-center space-y-3">
-                    <span class="text-xs font-bold tracking-widest text-udelasLight uppercase block">Vida Universitaria</span>
-                    <h2 class="text-3xl font-extrabold text-udelasDark">Galería de Eventos y Actividades</h2>
-                    <div class="h-1 w-24 bg-udelasLight mx-auto rounded"></div>
-                    <p class="text-sm text-slate-500 max-w-xl mx-auto">Explora las fotografías y vídeos de nuestras jornadas académicas, seminarios y presentaciones culturales.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                    <!-- Tarjeta 1: Vídeo Investigador Criminal -->
-                    <div onclick="openVideoModal('1216108229', 'Día del Investigador Criminal')" class="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300 cursor-pointer group">
-                        <div class="relative h-48 bg-slate-900 overflow-hidden">
-                            <img src="https://res.cloudinary.com/jnlnezib/image/upload/v1786027220/Dia%20del%20Investigador%20Criminal/IMG_0147_o3qqna.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Vídeo Investigador Criminal">
-                            <div class="absolute inset-0 bg-slate-950/30 flex items-center justify-center">
-                                <div class="w-12 h-12 rounded-full bg-udelasDark/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
-                                    <i class="fa-solid fa-play ml-1 text-sm"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-5 space-y-2 flex-grow border-t border-slate-100">
-                            <span class="text-[10px] font-bold text-udelasLight uppercase tracking-wider block">Vídeo • Investigación</span>
-                            <h3 class="text-sm font-bold text-udelasDark leading-tight">Día del Investigador Criminal</h3>
-                            <p class="text-xs text-slate-500">Vídeo especial conmemorativo del evento realizado por la escuela.</p>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 2: Álbum Investigador Criminal -->
-                    <div onclick="openPhotoModal('investigador_criminal')" class="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300 cursor-pointer group">
-                        <div class="relative h-48 bg-slate-100 overflow-hidden">
-                            <img src="https://res.cloudinary.com/jnlnezib/image/upload/v1786027220/Dia%20del%20Investigador%20Criminal/IMG_0147_o3qqna.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Álbum Investigador Criminal">
-                            <span class="absolute bottom-3 right-3 bg-slate-950/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm">
-                                <i class="fa-solid fa-images mr-1"></i> 7 Fotos
-                            </span>
-                        </div>
-                        <div class="p-5 space-y-2 flex-grow border-t border-slate-100">
-                            <span class="text-[10px] font-bold text-udelasLight uppercase tracking-wider block">Álbum • 1 de Julio</span>
-                            <h3 class="text-sm font-bold text-udelasDark leading-tight">El Investigador Criminal en el Siglo XXI</h3>
-                            <p class="text-xs text-slate-500">Seminario en el Edificio 807 con expositores y estudiantes.</p>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 3: Álbum Lengua de Señas -->
-                    <div onclick="openPhotoModal('lengua_senas')" class="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300 cursor-pointer group">
-                        <div class="relative h-48 bg-slate-100 overflow-hidden">
-                            <img src="https://res.cloudinary.com/jnlnezib/image/upload/v1786029798/IMG_7925_zscsol.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Con las Manos en el Escenario">
-                            <span class="absolute bottom-3 right-3 bg-slate-950/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm">
-                                <i class="fa-solid fa-images mr-1"></i> 7 Fotos
-                            </span>
-                        </div>
-                        <div class="p-5 space-y-2 flex-grow border-t border-slate-100">
-                            <span class="text-[10px] font-bold text-udelasLight uppercase tracking-wider block">Álbum • 4 de Julio</span>
-                            <h3 class="text-sm font-bold text-udelasDark leading-tight">Con las Manos en el Escenario</h3>
-                            <p class="text-xs text-slate-500">Presentación artística de la Licenciatura en Lengua de Señas.</p>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 4: Vídeo Aniversario FESDH -->
-                    <div onclick="openVideoModal('1216148130', 'Aniversario de la FESDH')" class="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300 cursor-pointer group">
-                        <div class="relative h-48 bg-slate-900 overflow-hidden">
-                            <img src="https://res.cloudinary.com/jnlnezib/image/upload/v1786027084/Dia%20del%20Investigador%20Criminal/IMG_0028_ycfowu.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Aniversario FESDH">
-                            <div class="absolute inset-0 bg-slate-950/30 flex items-center justify-center">
-                                <div class="w-12 h-12 rounded-full bg-udelasDark/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
-                                    <i class="fa-solid fa-play ml-1 text-sm"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-5 space-y-2 flex-grow border-t border-slate-100">
-                            <span class="text-[10px] font-bold text-udelasLight uppercase tracking-wider block">Vídeo • Institucional</span>
-                            <h3 class="text-sm font-bold text-udelasDark leading-tight">Aniversario de la FESDH</h3>
-                            <p class="text-xs text-slate-500">Vídeo oficial del Aniversario de nuestra Facultad.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- COASES -->
-        <section id="coases" class="py-24 bg-gradient-to-b from-slate-50 to-slate-100 px-4 border-b border-slate-200">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <!-- Info COASES -->
                 <div class="lg:col-span-7 space-y-6">
                     <span class="text-xs font-bold tracking-widest text-udelasLight uppercase block">Apoyo Estudiantil</span>
-                    <h2 class="text-3xl font-extrabold text-udelasDark">Centro de Orientación y Atención Socioeducativa (COASES)</h2>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-udelasDark leading-tight">
+                        Centro de Orientación y Atención Socioeducativa (COASES)
+                    </h1>
                     <div class="h-1 w-20 bg-udelasLight rounded"></div>
-                    <p class="text-slate-600 font-medium text-sm leading-relaxed">
+                    <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
                         Un espacio dentro de nuestra Facultad enfocado en brindarte las herramientas emocionales, psicológicas y académicas ideales para potenciar tu éxito universitario.
                     </p>
                     <div class="pt-2">
-                        <button onclick="verInfoCoases()" class="inline-flex items-center justify-center px-6 py-3 text-xs font-bold bg-udelasDark text-white hover:bg-slate-800 rounded-xl transition shadow-md">
+                        <button onclick="alert('Ponte en contacto con COASES a través del formulario o visitando nuestras oficinas.')" class="inline-flex items-center justify-center px-6 py-3 text-xs font-bold bg-udelasDark text-white hover:bg-slate-800 rounded-xl transition shadow-md">
                             <i class="fa-solid fa-circle-info mr-2 text-udelasLight"></i> VER MÁS INFORMACIÓN
                         </button>
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-slate-200 shadow-xl text-center space-y-4">
+                <!-- Tarjeta QR y Acceso Móvil -->
+                <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-slate-200 shadow-xl text-center space-y-5">
                     <div class="space-y-1">
                         <span class="text-[10px] font-extrabold text-udelasLight uppercase tracking-wider">Citas En Línea</span>
-                        <h3 class="text-lg font-bold text-udelasDark">Solicitud de Cita</h3>
+                        <h2 class="text-lg font-bold text-udelasDark">Solicitud de Cita</h2>
                     </div>
                     
+                    <!-- QR para Escritorio -->
                     <div class="bg-slate-50 p-4 rounded-2xl inline-block border border-slate-100 shadow-inner">
                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://forms.gle/TU_ENLACE_AQUI" alt="QR Formulario de Citas COASES" class="w-44 h-44 object-contain mx-auto">
                     </div>
                     
-                    <p class="text-xs font-semibold text-slate-500">
-                        Escanea el código QR con la cámara de tu celular para completar el formulario de solicitud de cita.
+                    <p class="text-xs font-semibold text-slate-500 max-w-xs mx-auto">
+                        Escanea el código QR o toca el botón si estás navegando desde tu teléfono:
+                    </p>
+
+                    <!-- Botón para acceso directo (Móviles / Tablets) -->
+                    <div class="pt-1">
+                        <a href="https://forms.gle/TU_ENLACE_AQUI" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 text-xs font-bold bg-udelasLight text-white hover:bg-udelasDark rounded-xl transition shadow-md gap-2">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> ABRIR FORMULARIO DE CITA
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- SECCIÓN GALERÍA MULTIMEDIA (Video único + Google Drive) -->
+        <section id="galeria" class="py-24 bg-slate-900 text-white px-4 border-b border-slate-800">
+            <div class="max-w-7xl mx-auto space-y-12">
+                
+                <!-- Encabezado -->
+                <div class="text-center max-w-2xl mx-auto space-y-3">
+                    <span class="text-xs font-bold tracking-widest text-udelasLight uppercase">Galería Multimedia</span>
+                    <h2 class="text-3xl font-extrabold text-white">Nuestra Facultad en Acción</h2>
+                    <div class="h-1 w-16 bg-udelasLight mx-auto rounded"></div>
+                    <p class="text-slate-400 text-xs sm:text-sm">
+                        Revive nuestros momentos institucionales, seminarios, eventos académicos y presentaciones estudiantiles.
                     </p>
                 </div>
+
+                <!-- Grid: Video + Tarjeta Drive -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    
+                    <!-- 1. VIDEO INSTITUCIONAL -->
+                    <div class="lg:col-span-7 bg-slate-800/60 border border-slate-700/60 rounded-3xl p-6 flex flex-col justify-between shadow-2xl backdrop-blur-sm hover:border-slate-600 transition duration-300">
+                        <div class="space-y-4">
+                            <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg bg-black">
+                                <iframe 
+                                    src="https://player.vimeo.com/video/1004148130?autoplay=0&title=0&byline=0&portrait=0" 
+                                    class="w-full h-full border-0" 
+                                    allow="autoplay; fullscreen; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div>
+                                <span class="inline-block px-3 py-1 bg-udelasDark text-udelasLight text-[10px] font-extrabold uppercase rounded-full mb-2">Vídeo Institucional</span>
+                                <h3 class="text-xl font-bold text-white">Recorrido e Inducción FESDH</h3>
+                                <p class="text-slate-400 text-xs mt-1">Conoce las instalaciones, laboratorios y el entorno académico de la Facultad de Educación Social y Desarrollo Humano.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. TARJETA GOOGLE DRIVE -->
+                    <div class="lg:col-span-5 bg-gradient-to-br from-slate-800 to-slate-850 border border-slate-700/60 rounded-3xl p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-udelasLight/50 transition duration-300">
+                        
+                        <!-- Efecto de luz de fondo -->
+                        <div class="absolute -right-8 -bottom-8 w-40 h-40 bg-udelasLight/10 rounded-full blur-2xl group-hover:bg-udelasLight/20 transition duration-500 pointer-events-none"></div>
+
+                        <div class="space-y-6 relative z-10">
+                            <div class="flex items-center justify-between">
+                                <div class="w-14 h-14 bg-slate-700/70 border border-slate-600 rounded-2xl flex items-center justify-center shadow-inner group-hover:scale-105 transition duration-300">
+                                    <i class="fa-solid fa-folder-open text-2xl text-udelasLight"></i>
+                                </div>
+                                <span class="text-[10px] font-bold text-slate-400 bg-slate-700/50 px-3 py-1 rounded-full border border-slate-600">Álbum Digital</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="text-2xl font-extrabold text-white group-hover:text-udelasLight transition">Fotografías de Eventos</h3>
+                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                    Accede a nuestro repositorio oficial en Google Drive para ver y descargar las galerías fotográficas en alta calidad de todos nuestros seminarios, ceremonias y actividades.
+                                </p>
+                            </div>
+
+                            <!-- Listado de Álbumes -->
+                            <ul class="space-y-2 text-xs text-slate-400">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-udelasLight text-[10px]"></i> Día del Investigador Criminal
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-udelasLight text-[10px]"></i> Presentación Artística: Lengua de Señas
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-udelasLight text-[10px]"></i> Descargas directas en HD
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Botón directo a Google Drive -->
+                        <div class="pt-8 relative z-10">
+                            <a href="https://drive.google.com/drive/folders/1dNFP_EuO-vRghjkZvUwdZ_pM4f0CklEc?usp=drive_link" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 text-xs font-extrabold tracking-wide text-white bg-udelasLight hover:bg-sky-500 active:scale-95 rounded-xl transition-all duration-200 shadow-lg shadow-udelasLight/20">
+                                <span>EXPLORAR FOTOS EN DRIVE</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
         </section>
 
-        <!-- RECURSOS ACADÉMICOS -->
-        <section id="recursos" class="py-24 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
-            <div class="max-w-7xl mx-auto space-y-12">
-                <div class="text-center space-y-3">
-                    <span class="text-xs font-bold tracking-widest text-udelasLight uppercase block">Biblioteca Digital</span>
-                    <h2 class="text-3xl font-extrabold text-udelasDark">Recursos Académicos</h2>
-                    <div class="h-1 w-24 bg-udelasLight mx-auto rounded"></div>
-                    <p class="text-sm text-slate-500 max-w-xl mx-auto">Accede directamente a nuestras carpetas oficiales en la nube para descargar la documentación actualizada.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-md transition">
-                        <div class="space-y-3">
-                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-udelasDark text-xl">
-                                <i class="fa-solid fa-calendar-days"></i>
-                            </div>
-                            <h3 class="text-base font-bold text-udelasDark">Horarios de Clases</h3>
-                            <p class="text-xs text-slate-500">Consulta las programaciones horarias, salones y asignaturas correspondientes al semestre en curso.</p>
-                        </div>
-                        <div class="pt-5">
-                            <a href="https://drive.google.com/drive/folders/1Ze0iqxqlMQutxiQj03oj0ESHU9HY7P1q?usp=drive_link" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-udelasLight transition shadow-sm">
-                                <i class="fa-solid fa-folder-open mr-1.5 text-udelasLight"></i> VER HORARIOS
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-md transition">
-                        <div class="space-y-3">
-                            <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 text-xl">
-                                <i class="fa-solid fa-newspaper"></i>
-                            </div>
-                            <h3 class="text-base font-bold text-udelasDark">Boletines Informativos</h3>
-                            <p class="text-xs text-slate-500">Mantente al día con los comunicados oficiales, eventos, efemérides y noticias de la FESDH.</p>
-                        </div>
-                        <div class="pt-5">
-                            <a href="https://drive.google.com/drive/folders/1tgV15si_iRAK8cJ2zb8hV6KGaXCuDUTX?usp=drive_link" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-udelasLight transition shadow-sm">
-                                <i class="fa-solid fa-folder-open mr-1.5 text-udelasLight"></i> VER BOLETINES
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-md transition">
-                        <div class="space-y-3">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 text-xl">
-                                <i class="fa-solid fa-file-lines"></i>
-                            </div>
-                            <h3 class="text-base font-bold text-udelasDark">Formatos y Guías</h3>
-                            <p class="text-xs text-slate-500">Descarga solicitudes de trámites, guías de anteproyectos, plantillas y formularios estudiantiles.</p>
-                        </div>
-                        <div class="pt-5">
-                            <a href="https://drive.google.com/drive/folders/1k_IS5Tm1k36PWgNLHED-a2o5z1gA1SY7?usp=drive_link" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-udelasLight transition shadow-sm">
-                                <i class="fa-solid fa-folder-open mr-1.5 text-udelasLight"></i> VER FORMATOS
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACTO -->
-        <section id="contacto" class="py-24 bg-white px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-                <div class="lg:col-span-5 bg-slate-50 p-8 rounded-3xl border flex flex-col justify-between space-y-6">
-                    <div class="space-y-4">
-                        <h3 class="text-xl font-bold text-udelasDark">Contacto Directo</h3>
-                        <p class="text-sm text-slate-700 font-semibold leading-relaxed">
-                            <i class="fa-solid fa-map-location-dot text-udelasLight mr-2"></i> Edificio 803, Universidad Especializada de las Américas, Facultad de Educación Social y Desarrollo Humano.
-                        </p>
-                        <p class="text-sm text-slate-700 font-semibold">
-                            <i class="fa-solid fa-phone text-udelasLight mr-2"></i> 501-1084 (Secretaría Administrativa)
-                        </p>
-                        <p class="text-sm text-slate-700 font-semibold">
-                            <i class="fa-solid fa-envelope text-udelasLight mr-2"></i> Correo: Por confirmar
-                        </p>
-                    </div>
-                    <a href="https://maps.app.goo.gl/dqXXeov1bVw7z7Vz9" target="_blank" class="w-full py-3.5 text-center text-sm font-bold bg-udelasDark text-white hover:bg-slate-800 rounded-xl transition shadow-md block">
-                        <i class="fa-solid fa-route mr-1 text-udelasLight"></i> VER EN GOOGLE MAPS
-                    </a>
-                </div>
-                <div class="lg:col-span-7 min-h-[380px] bg-white border p-2 rounded-3xl shadow-xl overflow-hidden relative flex">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15763.45663737213!2d-79.5548074!3d8.987342!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca8f4803db19b%3A0xc3f6087b7a151b75!2sUniversidad%20Especializada%20de%20las%20Am%C3%A9ricas%20(UDELAS)!5e0!3m2!1ses-419!2spa!4v1721500410000!5m2!1ses-419!2spa" class="w-full h-full min-h-[360px] rounded-2xl border-0" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 text-white pt-16 pb-12 px-4 border-t border-slate-900 shadow-inner">
-        <div class="max-w-4xl mx-auto text-center space-y-6">
-            <div class="space-y-3">
-                <h4 class="text-base font-bold text-slate-200 tracking-wider uppercase">Facultad de Educación Social y Desarrollo Humano</h4>
-                <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">Formando los profesionales de excelencia social, científica y humanística que el desarrollo nacional demanda.</p>
-            </div>
-            <div class="h-[1px] w-full bg-slate-900"></div>
-            <p class="text-[11px] text-slate-500 font-medium tracking-wide">
-                FESDH © 2026. Sitio Informativo Autorizado de la Facultad. <br class="sm:hidden"> Todos los derechos reservados. 
-                Visite portal oficial: <a href="https://www.udelas.ac.pa" target="_blank" class="text-udelasLight font-semibold hover:underline">udelas.ac.pa</a>
-            </p>
+    <!-- PIE DE PÁGINA -->
+    <footer id="contacto" class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-4 space-y-4">
+            <p class="font-semibold text-slate-300">Facultad de Educación Social y Desarrollo Humano - UDELAS</p>
+            <p>© 2026 Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- MODAL GLOBAL DE INFORMACIÓN -->
-    <div id="global-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300">
-        <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative border border-slate-200/60 transition-transform duration-300 transform scale-100">
-            <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 text-slate-500 hover:bg-udelasDark hover:text-white flex items-center justify-center transition duration-200 shadow-sm z-10 focus:outline-none" title="Cerrar ventana">
-                <i class="fa-solid fa-xmark text-sm"></i>
-            </button>
-            <div id="modal-content" class="p-6 sm:p-8 space-y-6"></div>
-        </div>
-    </div>
-
-    <!-- MODAL MULTIMEDIA (VÍDEOS Y ÁLBUMES DE FOTOS) -->
-    <div id="gallery-modal" class="fixed inset-0 z-[60] bg-slate-950/90 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300" onclick="closeGalleryModalOnOuterClick(event)">
-        <div class="bg-slate-900 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative border border-white/10 flex flex-col">
-            
-            <!-- Botón Cerrar -->
-            <button onclick="closeGalleryModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-red-600 flex items-center justify-center transition duration-200 z-30 focus:outline-none">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-
-            <!-- Contenedor Responsive de Vídeo -->
-            <div id="video-container" class="relative w-full aspect-video bg-black hidden flex items-center justify-center">
-                <!-- Inyectado vía JS -->
-            </div>
-
-            <!-- Contenedor de Visor de Fotos -->
-            <div id="photo-container" class="relative w-full h-[55vh] max-h-[500px] bg-black hidden flex items-center justify-center overflow-hidden">
-                <button id="btn-prev-photo" onclick="prevPhoto(event)" class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 text-white hover:bg-udelasLight flex items-center justify-center transition z-20 cursor-pointer">
-                    <i class="fa-solid fa-chevron-left text-lg"></i>
-                </button>
-                <img id="current-modal-img" src="" class="max-w-full max-h-full object-contain select-none" alt="Foto evento">
-                <button id="btn-next-photo" onclick="nextPhoto(event)" class="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 text-white hover:bg-udelasLight flex items-center justify-center transition z-20 cursor-pointer">
-                    <i class="fa-solid fa-chevron-right text-lg"></i>
-                </button>
-            </div>
-
-            <!-- Pie de Modal -->
-            <div class="p-6 bg-slate-900 border-t border-white/10 text-white space-y-2">
-                <div id="photo-counter-badge" class="inline-block bg-udelasDark text-udelasLight text-[11px] font-bold px-3 py-1 rounded-md hidden">
-                    Imagen 1 de 7
-                </div>
-                <h3 id="gallery-modal-title" class="text-lg font-bold text-white"></h3>
-                <p id="gallery-modal-desc" class="text-xs text-slate-300 leading-relaxed font-normal"></p>
-            </div>
-
-        </div>
-    </div>
-
-    <script src="carreras.js"></script>
-
-    <script>
-        // Preloader
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                setTimeout(() => {
-                    preloader.classList.add('opacity-0', 'pointer-events-none');
-                    setTimeout(() => preloader.remove(), 500);
-                }, 1200);
-            }
-        });
-
-        // Menú Móvil
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                menu.classList.add('hidden');
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        }
-
-        function inicializarCarreras() {
-            if (typeof renderCarreras === 'function') {
-                renderCarreras();
-            }
-        }
-
-        function renderCarreras() {
-            const grid = document.getElementById('grid-carreras');
-            if (!grid) return;
-            grid.innerHTML = '';
-
-            const lista = (typeof infoCarreras !== 'undefined' && infoCarreras.licenciaturas) ? infoCarreras.licenciaturas : [];
-            if(lista.length === 0) {
-                grid.innerHTML = '<p class="text-slate-500 text-sm col-span-1 md:col-span-2 lg:col-span-3 text-center py-8">Próximamente se añadirán más carreras.</p>';
-                return;
-            }
-
-            lista.forEach((carrera, index) => {
-                grid.innerHTML += `
-                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
-                        <div class="h-48 bg-white flex items-center justify-center p-2 overflow-hidden">
-                            <img src="${carrera.imagen}" class="max-w-full max-h-full object-contain hover:scale-102 transition duration-300" onerror="this.src='edificio_de_la_fesdh.jpg'">
-                        </div>
-                        <div class="p-5 space-y-2 flex-grow border-t border-slate-100">
-                            <h3 class="text-base font-bold text-udelasDark leading-tight">${carrera.titulo}</h3>
-                            <p class="text-xs text-slate-500 line-clamp-3">${carrera.resumen}</p>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <button onclick="verDetalles(${index})" class="w-full py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 transition shadow-sm">VER DETALLES</button>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        function verDetalles(index) {
-            const c = infoCarreras.licenciaturas[index];
-            const content = document.getElementById('modal-content');
-            let ingresoLi = c.ingreso.map(i => `<li class="text-udelasDark">• ${i}</li>`).join('');
-
-            content.innerHTML = `
-                <div class="space-y-3 pt-2">
-                    <h2 class="text-xl sm:text-2xl font-extrabold text-udelasDark leading-tight pr-6">${c.titulo}</h2>
-                    <div class="flex flex-wrap gap-3">
-                        <div class="inline-flex items-center space-x-2 bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-xl text-xs font-bold text-udelasDark shadow-sm">
-                            <i class="fa-solid fa-clock text-udelasLight"></i>
-                            <span>Duración: ${c.duracion}</span>
-                        </div>
-                        <div class="inline-flex items-center space-x-2 bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-xl text-xs font-bold text-udelasDark shadow-sm">
-                            <i class="fa-solid fa-graduation-cap text-udelasLight"></i>
-                            <span>Modalidad: ${c.modalidad}</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-sm text-udelasDark/90 font-medium leading-relaxed border-t pt-4">${c.descripcion}</p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-blue-50/40 p-4 rounded-xl border border-blue-100 text-xs">
-                        <h4 class="font-bold text-udelasDark mb-2 flex items-center"><i class="fa-solid fa-right-to-bracket mr-1.5 text-udelasLight"></i> PERFIL DE INGRESO</h4>
-                        <ul class="space-y-1.5">${ingresoLi}</ul>
-                    </div>
-                    <div class="bg-blue-50/40 p-4 rounded-xl border border-blue-100 text-xs">
-                        <h4 class="font-bold text-udelasDark mb-2 flex items-center"><i class="fa-solid fa-id-card mr-1.5 text-udelasLight"></i> PERFIL DE EGRESO</h4>
-                        <p class="text-udelasDark font-medium leading-relaxed">${c.egreso}</p>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-blue-50/40 p-4 rounded-xl border border-blue-100 text-xs">
-                        <h4 class="font-bold text-udelasDark mb-2 flex items-center"><i class="fa-solid fa-briefcase mr-1.5 text-udelasLight"></i> CAMPO LABORAL</h4>
-                        <p class="text-udelasDark font-medium leading-relaxed">${c.campo}</p>
-                    </div>
-                    <div class="bg-blue-50/40 p-4 rounded-xl border border-blue-100 text-xs space-y-1.5">
-                        <h4 class="font-bold text-udelasDark mb-2 flex items-center"><i class="fa-solid fa-address-book mr-1.5 text-udelasLight"></i> COORDINACIÓN</h4>
-                        <p class="text-udelasDark font-medium"><b>Coordinador:</b> ${c.coordinacion.nombre}</p>
-                        <p class="text-udelasDark font-medium"><b>Correo:</b> <a class="text-udelasLight underline font-bold" href="mailto:${c.coordinacion.correo}">${c.coordinacion.correo}</a></p>
-                        <p class="text-udelasDark font-medium"><b>Horario:</b> ${c.coordinacion.horario}</p>
-                    </div>
-                </div>
-            `;
-            document.getElementById('global-modal').classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
-        }
-
-        function verInfoFacultad() {
-            const content = document.getElementById('modal-content');
-            content.innerHTML = `
-                <div class="space-y-2 border-b pb-3 pt-2">
-                    <span class="text-xs font-bold text-udelasLight uppercase tracking-wider block">Reseña Histórica Oficial</span>
-                    <h2 class="text-xl font-bold text-udelasDark leading-tight">Facultad de Educación Social y Desarrollo Humano</h2>
-                </div>
-                <div class="space-y-4 text-xs leading-relaxed">
-                    <div class="bg-blue-50/40 p-4 rounded-xl border border-blue-100 space-y-2">
-                        <h4 class="font-bold text-udelasDark text-sm flex items-center"><i class="fa-solid fa-university text-udelasLight mr-2"></i> Origen Institucional (UDELAS)</h4>
-                        <p class="text-udelasDark font-medium">La Universidad Especializada de las Américas (UDELAS) fue creada en 1997 mediante la Ley 40, como la cuarta universidad oficial de la República de Panamá.</p>
-                    </div>
-                    <div class="bg-blue-50/40 p-4 rounded-xl border border-blue-100 space-y-2">
-                        <h4 class="font-bold text-udelasDark text-sm flex items-center"><i class="fa-solid fa-timeline text-udelasLight mr-2"></i> Evolución y Creación de la FESDH</h4>
-                        <p class="text-udelasDark font-medium">En el año 2015 se reorganiza la estructura académica, dando origen a la Facultad de Educación Social y Desarrollo Humano (FESDH).</p>
-                    </div>
-                </div>
-            `;
-            document.getElementById('global-modal').classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
-        }
-
-        function verInfoCoases() {
-            const content = document.getElementById('modal-content');
-            content.innerHTML = `
-                <div class="space-y-2 border-b pb-3 pt-2">
-                    <span class="text-xs font-bold text-udelasLight uppercase tracking-wider block">Atención Integral Estudiantil</span>
-                    <h2 class="text-xl font-bold text-udelasDark leading-tight">Centro de Orientación y Atención Socioeducativa (COASES)</h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-blue-50/40 p-5 rounded-2xl border border-blue-100 text-xs">
-                        <h4 class="font-bold text-udelasDark text-sm mb-3 flex items-center"><i class="fa-solid fa-hand-holding-heart text-udelasLight mr-2"></i> Servicios Disponibles</h4>
-                        <ul class="space-y-2 text-udelasDark font-medium">
-                            <li>• Consejería Psicológica.</li>
-                            <li>• Tutorías Académicas.</li>
-                            <li>• Apoyo en Desarrollo Personal.</li>
-                        </ul>
-                    </div>
-                    <div class="bg-blue-50/40 p-5 rounded-2xl border border-blue-100 text-xs">
-                        <h4 class="font-bold text-udelasDark text-sm mb-3"><i class="fa-solid fa-address-book text-udelasLight mr-2"></i> Contáctanos</h4>
-                        <p class="text-udelasDark font-semibold">Correo: coases@udelas.ac.pa</p>
-                    </div>
-                </div>
-            `;
-            document.getElementById('global-modal').classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
-        }
-
-        function closeModal() { 
-            document.getElementById('global-modal').classList.add('hidden'); 
-            document.body.classList.remove('overflow-hidden');
-        }
-
-        /* --- GALERÍA MULTIMEDIA Y ÁLBUMES --- */
-        const photoAlbums = {
-            'investigador_criminal': {
-                title: 'El Investigador Criminal en el Siglo XXI',
-                description: 'Bajo el lema "Conocimiento, ciencia y compromiso al servicio de la justicia", la Coordinación de la Carrera de Investigación Criminal y Seguridad realizó este seminario el 1 de julio.',
-                photos: [
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786027220/Dia%20del%20Investigador%20Criminal/IMG_0147_o3qqna.jpg',
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786027239/Dia%20del%20Investigador%20Criminal/IMG_0129_ijtpvd.jpg',
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786027228/Dia%20del%20Investigador%20Criminal/IMG_9989_nvco5r.jpg',
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786027220/Dia%20del%20Investigador%20Criminal/IMG_9974_alavgy.jpg',
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786027205/Dia%20del%20Investigador%20Criminal/IMG_0139_anlbck.jpg',
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786027136/Dia%20del%20Investigador%20Criminal/IMG_0069_cmerp0.jpg',
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786027084/Dia%20del%20Investigador%20Criminal/IMG_0028_ycfowu.jpg'
-                ]
-            },
-            'lengua_senas': {
-                title: 'Presentación Artística: Con las Manos en el Escenario',
-                description: 'Celebración de arte e inclusión realizada en el Auditorio Roy Tejeira por docentes y estudiantes de la Licenciatura en Lengua de Señas.',
-                photos: [
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786029798/IMG_7925_zscsol.jpg',
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786029778/IMG_7926_ars73f.jpg',
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786029847/IMG_8016_ttaej6.jpg',
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786030252/IMG_8013_ub6g9d.jpg',
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786030312/IMG_7908_xlotfu.jpg',
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786030196/IMG_7848_zekvjn.jpg',
-                    'https://res.cloudinary.com/jnlnezib/image/upload/v1786030340/IMG_7992_c2duuh.jpg'
-                ]
-            }
-        };
-
-        let currentAlbumKey = null;
-        let currentPhotoIndex = 0;
-
-        // Abrir Modal de Vídeo
-        function openVideoModal(videoId, titulo) {
-            document.getElementById('photo-container').classList.add('hidden');
-            document.getElementById('photo-counter-badge').classList.add('hidden');
-            
-            const videoContainer = document.getElementById('video-container');
-            videoContainer.classList.remove('hidden');
-            
-            videoContainer.innerHTML = `
-                <iframe 
-                    src="https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1" 
-                    class="w-full h-full border-0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share">
-                </iframe>
-            `;
-
-            document.getElementById('gallery-modal-title').innerText = titulo || "Reproductor de Vídeo";
-            document.getElementById('gallery-modal-desc').innerText = "Reproducción de vídeo institucional FESDH.";
-
-            document.getElementById('gallery-modal').classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
-        }
-
-        // Abrir Modal de Fotos
-        function openPhotoModal(albumKey) {
-            if (!photoAlbums[albumKey]) return;
-
-            currentAlbumKey = albumKey;
-            currentPhotoIndex = 0;
-
-            const videoContainer = document.getElementById('video-container');
-            videoContainer.classList.add('hidden');
-            videoContainer.innerHTML = '';
-            
-            document.getElementById('photo-container').classList.remove('hidden');
-            document.getElementById('photo-counter-badge').classList.remove('hidden');
-
-            updatePhotoViewer();
-            document.getElementById('gallery-modal').classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
-        }
-
-        function updatePhotoViewer() {
-            if (!currentAlbumKey || !photoAlbums[currentAlbumKey]) return;
-            const album = photoAlbums[currentAlbumKey];
-
-            const img = document.getElementById('current-modal-img');
-            img.src = album.photos[currentPhotoIndex];
-            
-            document.getElementById('gallery-modal-title').innerText = album.title;
-            document.getElementById('gallery-modal-desc').innerText = album.description;
-            document.getElementById('photo-counter-badge').innerText = `Imagen ${currentPhotoIndex + 1} de ${album.photos.length}`;
-        }
-
-        function nextPhoto(e) {
-            if (e && e.stopPropagation) e.stopPropagation();
-            if (!currentAlbumKey || !photoAlbums[currentAlbumKey]) return;
-            const album = photoAlbums[currentAlbumKey];
-            currentPhotoIndex = (currentPhotoIndex + 1) % album.photos.length;
-            updatePhotoViewer();
-        }
-
-        function prevPhoto(e) {
-            if (e && e.stopPropagation) e.stopPropagation();
-            if (!currentAlbumKey || !photoAlbums[currentAlbumKey]) return;
-            const album = photoAlbums[currentAlbumKey];
-            currentPhotoIndex = (currentPhotoIndex - 1 + album.photos.length) % album.photos.length;
-            updatePhotoViewer();
-        }
-
-        function closeGalleryModal() {
-            document.getElementById('gallery-modal').classList.add('hidden');
-            const videoContainer = document.getElementById('video-container');
-            videoContainer.innerHTML = '';
-            document.body.classList.remove('overflow-hidden');
-        }
-
-        function closeGalleryModalOnOuterClick(event) {
-            if (event.target.id === 'gallery-modal') {
-                closeGalleryModal();
-            }
-        }
-
-        document.addEventListener('keydown', function(e) {
-            const modal = document.getElementById('gallery-modal');
-            if (modal && !modal.classList.contains('hidden')) {
-                if (e.key === 'Escape') closeGalleryModal();
-                if (currentAlbumKey) {
-                    if (e.key === 'ArrowRight') nextPhoto();
-                    if (e.key === 'ArrowLeft') prevPhoto();
-                }
-            }
-        });
-
-        window.onload = inicializarCarreras;
-    </script>
 </body>
 </html>
