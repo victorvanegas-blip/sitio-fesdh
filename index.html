@@ -414,7 +414,7 @@
         </div>
     </footer>
 
-    <!-- MODAL GLOBAL -->
+    <!-- MODAL GLOBAL DE INFORMACIÓN -->
     <div id="global-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300">
         <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative border border-slate-200/60 transition-transform duration-300 transform scale-100">
             <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 text-slate-500 hover:bg-udelasDark hover:text-white flex items-center justify-center transition duration-200 shadow-sm z-10 focus:outline-none" title="Cerrar ventana">
@@ -424,7 +424,7 @@
         </div>
     </div>
 
-    <!-- MODAL DE MULTIMEDIA (VÍDEOS Y FOTOS CORREGIDO) -->
+    <!-- MODAL MULTIMEDIA (VÍDEOS Y ÁLBUMES DE FOTOS CORREGIDO) -->
     <div id="gallery-modal" class="fixed inset-0 z-[60] bg-slate-950/90 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300" onclick="closeGalleryModalOnOuterClick(event)">
         <div class="bg-slate-900 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative border border-white/10 flex flex-col">
             
@@ -433,12 +433,12 @@
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
-            <!-- Contenedor Vídeo Vimeo -->
-            <div id="video-container" class="relative w-full aspect-video bg-black hidden">
-                <iframe id="vimeo-iframe" class="w-full h-full border-0" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <!-- Contenedor Responsive de Vídeo -->
+            <div id="video-container" class="relative w-full aspect-video bg-black hidden flex items-center justify-center">
+                <!-- Se inyecta dinámicamente vía JS -->
             </div>
 
-            <!-- Contenedor Visor Fotos -->
+            <!-- Contenedor de Visor de Fotos -->
             <div id="photo-container" class="relative w-full h-[55vh] max-h-[500px] bg-black hidden flex items-center justify-center overflow-hidden">
                 <button id="btn-prev-photo" onclick="prevPhoto(event)" class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 text-white hover:bg-udelasLight flex items-center justify-center transition z-20 cursor-pointer">
                     <i class="fa-solid fa-chevron-left text-lg"></i>
@@ -449,7 +449,7 @@
                 </button>
             </div>
 
-            <!-- Pie de Foto / Información -->
+            <!-- Pie de Modal -->
             <div class="p-6 bg-slate-900 border-t border-white/10 text-white space-y-2">
                 <div id="photo-counter-badge" class="inline-block bg-udelasDark text-udelasLight text-[11px] font-bold px-3 py-1 rounded-md hidden">
                     Imagen 1 de 7
@@ -464,7 +464,7 @@
     <script src="carreras.js"></script>
 
     <script>
-        // Ocultar preloader
+        // Preloader
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             if (preloader) {
@@ -475,6 +475,7 @@
             }
         });
 
+        // Menú Móvil
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
@@ -624,7 +625,7 @@
             document.body.classList.remove('overflow-hidden');
         }
 
-        /* --- GALERÍA MULTIMEDIA CORREGIDA --- */
+        /* --- GALERÍA MULTIMEDIA Y ÁLBUMES --- */
         const photoAlbums = {
             'investigador_criminal': {
                 title: 'El Investigador Criminal en el Siglo XXI',
@@ -657,13 +658,23 @@
         let currentAlbumKey = null;
         let currentPhotoIndex = 0;
 
+        // Abrir Modal de Vídeo con parámetros de Vimeo integrados
         function openVideoModal(videoId, titulo) {
             document.getElementById('photo-container').classList.add('hidden');
             document.getElementById('photo-counter-badge').classList.add('hidden');
             
-            const iframe = document.getElementById('vimeo-iframe');
-            iframe.src = `https://player.vimeo.com/video/${videoId}?autoplay=1`;
-            document.getElementById('video-container').classList.remove('hidden');
+            const videoContainer = document.getElementById('video-container');
+            videoContainer.classList.remove('hidden');
+            
+            // Inyección del iframe usando app_id=58479 y clase responsive
+            videoContainer.innerHTML = `
+                <iframe 
+                    src="https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1" 
+                    class="w-full h-full border-0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                    allowfullscreen>
+                </iframe>
+            `;
 
             document.getElementById('gallery-modal-title').innerText = titulo || "Reproductor de Vídeo";
             document.getElementById('gallery-modal-desc').innerText = "Reproducción de vídeo institucional FESDH.";
@@ -672,14 +683,16 @@
             document.body.classList.add('overflow-hidden');
         }
 
+        // Abrir Modal de Fotos
         function openPhotoModal(albumKey) {
             if (!photoAlbums[albumKey]) return;
 
             currentAlbumKey = albumKey;
             currentPhotoIndex = 0;
 
-            document.getElementById('video-container').classList.add('hidden');
-            document.getElementById('vimeo-iframe').src = '';
+            const videoContainer = document.getElementById('video-container');
+            videoContainer.classList.add('hidden');
+            videoContainer.innerHTML = '';
             
             document.getElementById('photo-container').classList.remove('hidden');
             document.getElementById('photo-counter-badge').classList.remove('hidden');
@@ -719,7 +732,9 @@
 
         function closeGalleryModal() {
             document.getElementById('gallery-modal').classList.add('hidden');
-            document.getElementById('vimeo-iframe').src = '';
+            // Vaciar contenedor del vídeo para frenar la reproducción en segundo plano
+            const videoContainer = document.getElementById('video-container');
+            videoContainer.innerHTML = '';
             document.body.classList.remove('overflow-hidden');
         }
 
@@ -731,10 +746,12 @@
 
         document.addEventListener('keydown', function(e) {
             const modal = document.getElementById('gallery-modal');
-            if (modal && !modal.classList.contains('hidden') && currentAlbumKey) {
-                if (e.key === 'ArrowRight') nextPhoto();
-                if (e.key === 'ArrowLeft') prevPhoto();
+            if (modal && !modal.classList.contains('hidden')) {
                 if (e.key === 'Escape') closeGalleryModal();
+                if (currentAlbumKey) {
+                    if (e.key === 'ArrowRight') nextPhoto();
+                    if (e.key === 'ArrowLeft') prevPhoto();
+                }
             }
         });
         
