@@ -11,9 +11,10 @@
             theme: {
                 extend: {
                     colors: { 
-                        udelasDark: '#2B4380', 
-                        udelasLight: '#5B9FCA', 
-                        udelasBg: '#F4F8FA' 
+                        udelasDark: '#0B1B3D', 
+                        fesdhGold: '#C89A1C', 
+                        fesdhLight: '#E5B83A', 
+                        udelasBg: '#F8FAF9' 
                     },
                     fontFamily: { 
                         sans: ['Plus Jakarta Sans', 'sans-serif'] 
@@ -41,14 +42,14 @@
         }
     </style>
 </head>
-<body class="bg-udelasBg text-slate-800 antialiased selection:bg-udelasDark selection:text-white">
+<body class="bg-udelasBg text-slate-800 antialiased selection:bg-fesdhGold selection:text-white">
 
     <!-- PANTALLA DE CARGA (PRELOADER INSTITUCIONAL BLANCO) -->
     <div id="preloader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white transition-opacity duration-500">
         <div class="flex flex-col items-center space-y-8 max-w-sm px-4">
             <img src="logotipo_de_la_fesdh.png" alt="FESDH" class="h-44 sm:h-52 w-auto object-contain animate-pulse">
             <div class="w-56 h-1.5 bg-slate-100 rounded-full overflow-hidden relative border border-slate-200/50">
-                <div class="absolute inset-y-0 left-0 bg-udelasDark rounded-full w-1/2 animate-[loading_1.5s_infinite_ease-in-out]"></div>
+                <div class="absolute inset-y-0 left-0 bg-fesdhGold rounded-full w-1/2 animate-[loading_1.5s_infinite_ease-in-out]"></div>
             </div>
             <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest animate-pulse">Cargando Facultad</span>
         </div>
@@ -70,36 +71,36 @@
 
                 <!-- MENÚ DE NAVEGACIÓN -->
                 <div class="hidden md:flex items-center space-x-7">
-                    <a href="#nosotros" class="text-sm font-semibold text-slate-600 hover:text-udelasDark transition">Nosotros</a>
-                    <a href="#carreras" class="text-sm font-semibold text-slate-600 hover:text-udelasDark transition">Carreras</a>
+                    <a href="#nosotros" class="text-sm font-semibold text-slate-600 hover:text-fesdhGold transition">Nosotros</a>
+                    <a href="#carreras" class="text-sm font-semibold text-slate-600 hover:text-fesdhGold transition">Carreras</a>
                     
                     <!-- DROPDOWN DE SERVICIOS -->
                     <div class="relative dropdown py-4">
-                        <button class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark transition focus:outline-none">
+                        <button class="flex items-center text-sm font-semibold text-slate-600 hover:text-fesdhGold transition focus:outline-none">
                             Servicios <i class="fa-solid fa-chevron-down ml-1.5 text-[10px] text-slate-400"></i>
                         </button>
                         <div class="dropdown-menu hidden absolute left-0 mt-2 w-64 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 z-50">
-                            <a href="#coases" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-udelasDark transition">
-                                <i class="fa-solid fa-hand-holding-heart mr-2 text-udelasLight"></i> COASES
+                            <a href="#coases" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-fesdhGold transition">
+                                <i class="fa-solid fa-hand-holding-heart mr-2 text-fesdhGold"></i> COASES
                             </a>
-                            <a href="https://forms.gle/g1b6VYzVLWoL1ZnGA" target="_blank" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-udelasDark transition">
-                                <i class="fa-solid fa-file-signature mr-2 text-udelasLight"></i> Certificación Docente Admin.
+                            <a href="https://forms.gle/g1b6VYzVLWoL1ZnGA" target="_blank" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-fesdhGold transition">
+                                <i class="fa-solid fa-file-signature mr-2 text-fesdhGold"></i> Certificación Docente Admin.
                             </a>
-                            <a href="https://victorvanegas-blip.github.io/auditorio-fesdh/" target="_blank" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-udelasDark transition">
-                                <i class="fa-solid fa-calendar-check mr-2 text-udelasLight"></i> Reserva de Auditorio
+                            <a href="https://victorvanegas-blip.github.io/auditorio-fesdh/" target="_blank" class="block px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 hover:text-fesdhGold transition">
+                                <i class="fa-solid fa-calendar-check mr-2 text-fesdhGold"></i> Reserva de Auditorio
                             </a>
                         </div>
                     </div>
 
-                    <a href="#galeria" class="text-sm font-semibold text-slate-600 hover:text-udelasDark transition">Galería</a>
-                    <a href="#recursos" class="text-sm font-semibold text-slate-600 hover:text-udelasDark transition">Recursos</a>
-                    <a href="#contacto" class="text-sm font-semibold text-slate-600 hover:text-udelasDark transition">Contacto</a>
+                    <a href="#galeria" class="text-sm font-semibold text-slate-600 hover:text-fesdhGold transition">Galería</a>
+                    <a href="#recursos" class="text-sm font-semibold text-slate-600 hover:text-fesdhGold transition">Recursos</a>
+                    <a href="#contacto" class="text-sm font-semibold text-slate-600 hover:text-fesdhGold transition">Contacto</a>
                 </div>
 
                 <!-- Botón Menú Móvil -->
                 <div class="md:hidden flex items-center space-x-4">
                     <img src="logo_udelas.png" alt="Logo UDELAS" class="h-12 w-auto object-contain sm:hidden">
-                    <button onclick="toggleMenu()" class="text-slate-600 hover:text-udelasDark focus:outline-none">
+                    <button onclick="toggleMenu()" class="text-slate-600 hover:text-fesdhGold focus:outline-none">
                         <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -108,49 +109,49 @@
 
         <!-- Menú Desplegable Móvil -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2 shadow-lg">
-            <a href="#nosotros" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-udelasDark py-2 border-b border-slate-100">Nosotros</a>
-            <a href="#carreras" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-udelasDark py-2 border-b border-slate-100">Carreras</a>
+            <a href="#nosotros" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-fesdhGold py-2 border-b border-slate-100">Nosotros</a>
+            <a href="#carreras" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-fesdhGold py-2 border-b border-slate-100">Carreras</a>
             
             <div class="py-2 border-b border-slate-100 space-y-2">
                 <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block px-1">Servicios</span>
-                <a href="#coases" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark pl-3 py-1">
-                    <i class="fa-solid fa-hand-holding-heart mr-2 text-udelasLight text-xs"></i> COASES
+                <a href="#coases" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-fesdhGold pl-3 py-1">
+                    <i class="fa-solid fa-hand-holding-heart mr-2 text-fesdhGold text-xs"></i> COASES
                 </a>
-                <a href="https://forms.gle/g1b6VYzVLWoL1ZnGA" target="_blank" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark pl-3 py-1">
-                    <i class="fa-solid fa-file-signature mr-2 text-udelasLight text-xs"></i> Certificación Docente Admin.
+                <a href="https://forms.gle/g1b6VYzVLWoL1ZnGA" target="_blank" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-fesdhGold pl-3 py-1">
+                    <i class="fa-solid fa-file-signature mr-2 text-fesdhGold text-xs"></i> Certificación Docente Admin.
                 </a>
-                <a href="https://victorvanegas-blip.github.io/auditorio-fesdh/" target="_blank" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-udelasDark pl-3 py-1">
-                    <i class="fa-solid fa-calendar-check mr-2 text-udelasLight text-xs"></i> Reserva de Auditorio
+                <a href="https://victorvanegas-blip.github.io/auditorio-fesdh/" target="_blank" onclick="toggleMenu()" class="flex items-center text-sm font-semibold text-slate-600 hover:text-fesdhGold pl-3 py-1">
+                    <i class="fa-solid fa-calendar-check mr-2 text-fesdhGold text-xs"></i> Reserva de Auditorio
                 </a>
             </div>
 
-            <a href="#galeria" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-udelasDark py-2 border-b border-slate-100">Galería</a>
-            <a href="#recursos" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-udelasDark py-2 border-b border-slate-100">Recursos</a>
-            <a href="#contacto" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-udelasDark py-2 border-b border-slate-100">Contacto</a>
+            <a href="#galeria" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-fesdhGold py-2 border-b border-slate-100">Galería</a>
+            <a href="#recursos" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-fesdhGold py-2 border-b border-slate-100">Recursos</a>
+            <a href="#contacto" onclick="toggleMenu()" class="block text-sm font-semibold text-slate-600 hover:text-fesdhGold py-2 border-b border-slate-100">Contacto</a>
         </div>
     </nav>
 
     <main class="pt-28">
 
         <!-- INICIO -->
-        <section id="inicio" class="relative min-h-[calc(100vh-7rem)] flex items-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white px-4 sm:px-6 lg:px-8">
+        <section id="inicio" class="relative min-h-[calc(100vh-7rem)] flex items-center bg-gradient-to-br from-udelasDark via-slate-900 to-udelasDark text-white px-4 sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12">
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full text-xs font-semibold text-udelasLight tracking-wide uppercase">
+                    <div class="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full text-xs font-semibold text-fesdhGold tracking-wide uppercase">
                         <span class="flex h-2 w-2 relative">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-udelasLight opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-udelasLight"></span>
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-fesdhGold opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-fesdhGold"></span>
                         </span>
                         <span>Sitio Informativo Autorizado</span>
                     </div>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none">
-                        Facultad de Educación Social y <span class="text-transparent bg-clip-text bg-gradient-to-r from-udelasLight to-blue-200">Desarrollo Humano</span>
+                        Facultad de Educación Social y <span class="text-transparent bg-clip-text bg-gradient-to-r from-fesdhGold to-amber-200">Desarrollo Humano</span>
                     </h1>
                     <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
                         Formamos profesionales comprometidos con la transformación social, la investigación criminal y el bienestar comunitario en Panamá.
                     </p>
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#carreras" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-sm font-bold bg-udelasLight text-white hover:bg-opacity-90 rounded-2xl transition shadow-lg">
+                        <a href="#carreras" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-sm font-bold bg-fesdhGold text-white hover:bg-fesdhLight rounded-2xl transition shadow-lg">
                             EXPLORAR CARRERAS <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
                         </a>
                     </div>
@@ -170,15 +171,15 @@
         <section id="nosotros" class="py-24 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                 <div class="lg:col-span-7 space-y-6">
-                    <span class="text-xs font-bold tracking-widest text-udelasLight uppercase block">Nuestra Historia</span>
+                    <span class="text-xs font-bold tracking-widest text-fesdhGold uppercase block">Nuestra Historia</span>
                     <h2 class="text-3xl font-extrabold text-udelasDark">¿Quiénes Somos?</h2>
-                    <div class="h-1 w-20 bg-udelasLight rounded"></div>
+                    <div class="h-1 w-20 bg-fesdhGold rounded"></div>
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
                         La <span class="font-bold text-udelasDark">Universidad Especializada de las Américas (UDELAS)</span> fue creada en 1997 mediante la Ley 40, como la cuarta universidad oficial de la República de Panamá. En el año 2015 se reorganiza institucionalmente dando origen a la <span class="font-bold text-udelasDark">Facultad de Educación Social y Desarrollo Humano (FESDH)</span>, consolidando una oferta académica orientada al firme compromiso social.
                     </p>
                     <div class="pt-2">
                         <button onclick="verInfoFacultad()" class="inline-flex items-center justify-center px-6 py-3 text-xs font-bold bg-udelasDark text-white hover:bg-slate-800 rounded-xl transition shadow-md">
-                            <i class="fa-solid fa-graduation-cap mr-2 text-udelasLight"></i> VER HISTORIA Y AUTORIDADES
+                            <i class="fa-solid fa-graduation-cap mr-2 text-fesdhGold"></i> VER HISTORIA Y AUTORIDADES
                         </button>
                     </div>
                 </div>
@@ -192,9 +193,9 @@
         <section id="carreras" class="py-24 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
             <div class="max-w-7xl mx-auto space-y-12">
                 <div class="text-center space-y-3">
-                    <span class="text-xs font-bold tracking-widest text-udelasLight uppercase block">Oferta Educativa</span>
+                    <span class="text-xs font-bold tracking-widest text-fesdhGold uppercase block">Oferta Educativa</span>
                     <h2 class="text-3xl font-extrabold text-udelasDark">Nuestras Carreras Académicas</h2>
-                    <div class="h-1 w-24 bg-udelasLight mx-auto rounded"></div>
+                    <div class="h-1 w-24 bg-fesdhGold mx-auto rounded"></div>
                 </div>
                 <div id="grid-carreras" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </div>
@@ -205,24 +206,24 @@
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
                 <div class="lg:col-span-7 space-y-6">
-                    <span class="text-xs font-bold tracking-widest text-udelasLight uppercase block">Apoyo Estudiantil</span>
+                    <span class="text-xs font-bold tracking-widest text-fesdhGold uppercase block">Apoyo Estudiantil</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-udelasDark leading-tight">
                         Centro de Orientación y Atención Socioeducativa (COASES)
                     </h2>
-                    <div class="h-1 w-20 bg-udelasLight rounded"></div>
+                    <div class="h-1 w-20 bg-fesdhGold rounded"></div>
                     <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
                         Un espacio dentro de nuestra Facultad enfocado en brindarte las herramientas emocionales, psicológicas y académicas ideales para potenciar tu éxito universitario.
                     </p>
                     <div class="pt-2">
                         <button onclick="verInfoCoases()" class="inline-flex items-center justify-center px-6 py-3 text-xs font-bold bg-udelasDark text-white hover:bg-slate-800 rounded-xl transition shadow-md">
-                            <i class="fa-solid fa-circle-info mr-2 text-udelasLight"></i> VER MÁS INFORMACIÓN
+                            <i class="fa-solid fa-circle-info mr-2 text-fesdhGold"></i> VER MÁS INFORMACIÓN
                         </button>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-slate-200 shadow-xl text-center space-y-5">
                     <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold text-udelasLight uppercase tracking-wider">Citas En Línea</span>
+                        <span class="text-[10px] font-extrabold text-fesdhGold uppercase tracking-wider">Citas En Línea</span>
                         <h3 class="text-xl font-bold text-udelasDark">Solicitud de Cita</h3>
                     </div>
                     
@@ -235,7 +236,7 @@
                     </p>
 
                     <div class="pt-1">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHxCRJeTZqqN9uJKY6g56AMK5_noQrMSq59xrOW8FRsv-e5Q/viewform" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 text-xs font-bold bg-udelasLight text-white hover:bg-udelasDark rounded-xl transition shadow-md gap-2">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHxCRJeTZqqN9uJKY6g56AMK5_noQrMSq59xrOW8FRsv-e5Q/viewform" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 text-xs font-bold bg-fesdhGold text-white hover:bg-udelasDark rounded-xl transition shadow-md gap-2">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i> ABRIR FORMULARIO DE CITA
                         </a>
                     </div>
@@ -245,13 +246,13 @@
         </section>
 
         <!-- GALERÍA MULTIMEDIA -->
-        <section id="galeria" class="py-24 bg-slate-900 text-white px-4 border-b border-slate-800">
+        <section id="galeria" class="py-24 bg-udelasDark text-white px-4 border-b border-slate-800">
             <div class="max-w-7xl mx-auto space-y-12">
                 
                 <div class="text-center max-w-2xl mx-auto space-y-3">
-                    <span class="text-xs font-bold tracking-widest text-udelasLight uppercase">Galería Multimedia</span>
+                    <span class="text-xs font-bold tracking-widest text-fesdhGold uppercase">Galería Multimedia</span>
                     <h2 class="text-3xl font-extrabold text-white">Nuestra Facultad en Acción</h2>
-                    <div class="h-1 w-16 bg-udelasLight mx-auto rounded"></div>
+                    <div class="h-1 w-16 bg-fesdhGold mx-auto rounded"></div>
                     <p class="text-slate-400 text-xs sm:text-sm">
                         Visualiza nuestros eventos, seminarios y actividades académicas.
                     </p>
@@ -260,7 +261,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                     
                     <!-- Vídeo Institucional (Reproductor Vimeo Incorporado) -->
-                    <div class="lg:col-span-7 bg-slate-800/60 border border-slate-700/60 rounded-3xl p-6 flex flex-col justify-between shadow-2xl backdrop-blur-sm hover:border-slate-600 transition duration-300">
+                    <div class="lg:col-span-7 bg-slate-900/80 border border-slate-700/60 rounded-3xl p-6 flex flex-col justify-between shadow-2xl backdrop-blur-sm hover:border-slate-600 transition duration-300">
                         <div class="space-y-4">
                             <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg bg-black">
                                 <div style="padding:56.25% 0 0 0;position:relative;">
@@ -269,7 +270,7 @@
                                 <script src="https://player.vimeo.com/api/player.js"></script>
                             </div>
                             <div>
-                                <span class="inline-block px-3 py-1 bg-udelasDark text-udelasLight text-[10px] font-extrabold uppercase rounded-full mb-2">Vídeo Institucional</span>
+                                <span class="inline-block px-3 py-1 bg-fesdhGold text-white text-[10px] font-extrabold uppercase rounded-full mb-2">Vídeo Institucional</span>
                                 <h3 class="text-xl font-bold text-white">Día del Investigador Criminal</h3>
                                 <p class="text-slate-400 text-xs mt-1">Facultad de Educación Social y Desarrollo Humano.</p>
                             </div>
@@ -277,26 +278,26 @@
                     </div>
 
                     <!-- Tarjeta Google Drive Fotografía -->
-                    <div class="lg:col-span-5 bg-gradient-to-br from-slate-800 to-slate-850 border border-slate-700/60 rounded-3xl p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-udelasLight/50 transition duration-300">
+                    <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700/60 rounded-3xl p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-fesdhGold/50 transition duration-300">
                         
-                        <div class="absolute -right-8 -bottom-8 w-40 h-40 bg-udelasLight/10 rounded-full blur-2xl group-hover:bg-udelasLight/20 transition duration-500 pointer-events-none"></div>
+                        <div class="absolute -right-8 -bottom-8 w-40 h-40 bg-fesdhGold/10 rounded-full blur-2xl group-hover:bg-fesdhGold/20 transition duration-500 pointer-events-none"></div>
 
                         <div class="space-y-6 relative z-10">
                             <div class="flex items-center justify-between">
-                                <div class="w-14 h-14 bg-slate-700/70 border border-slate-600 rounded-2xl flex items-center justify-center shadow-inner group-hover:scale-105 transition duration-300">
-                                    <i class="fa-solid fa-images text-2xl text-udelasLight"></i>
+                                <div class="w-14 h-14 bg-slate-800 border border-slate-700 rounded-2xl flex items-center justify-center shadow-inner group-hover:scale-105 transition duration-300">
+                                    <i class="fa-solid fa-images text-2xl text-fesdhGold"></i>
                                 </div>
-                                <span class="text-[10px] font-bold text-slate-400 bg-slate-700/50 px-3 py-1 rounded-full border border-slate-600">Solo Lectura</span>
+                                <span class="text-[10px] font-bold text-slate-400 bg-slate-800 px-3 py-1 rounded-full border border-slate-700">Solo Lectura</span>
                             </div>
 
                             <div class="space-y-2">
-                                <h3 class="text-2xl font-extrabold text-white group-hover:text-udelasLight transition">Galería Fotográfica</h3>
+                                <h3 class="text-2xl font-extrabold text-white group-hover:text-fesdhGold transition">Galería Fotográfica</h3>
                                 <p class="text-slate-300 text-sm leading-relaxed">
                                     Accede a la galería multimedia oficial en Google Drive para consultar las imágenes de nuestros eventos.
                                 </p>
                             </div>
 
-                            <div class="bg-slate-900/60 border border-slate-700/80 p-3 rounded-xl">
+                            <div class="bg-slate-950/60 border border-slate-800 p-3 rounded-xl">
                                 <p class="text-[11px] text-amber-300/90 font-semibold flex items-center gap-1.5">
                                     <i class="fa-solid fa-eye text-xs"></i>
                                     <span>Acceso de solo visualización (descargas no disponibles).</span>
@@ -308,7 +309,7 @@
                             <a href="https://drive.google.com/drive/folders/1dNFP_EuO-vRghjkZvUwdZ_pM4f0CklEc?usp=drive_link" 
                                target="_blank" 
                                rel="noopener noreferrer"
-                               class="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 text-xs font-extrabold tracking-wide text-white bg-udelasLight hover:bg-sky-500 active:scale-95 rounded-xl transition-all duration-200 shadow-lg shadow-udelasLight/20">
+                               class="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 text-xs font-extrabold tracking-wide text-white bg-fesdhGold hover:bg-fesdhLight active:scale-95 rounded-xl transition-all duration-200 shadow-lg shadow-fesdhGold/20">
                                 <span>VER GALERÍA EN DRIVE</span>
                                 <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
                             </a>
@@ -324,9 +325,9 @@
         <section id="recursos" class="py-24 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
             <div class="max-w-7xl mx-auto space-y-12">
                 <div class="text-center space-y-3">
-                    <span class="text-xs font-bold tracking-widest text-udelasLight uppercase block">Biblioteca Digital</span>
+                    <span class="text-xs font-bold tracking-widest text-fesdhGold uppercase block">Biblioteca Digital</span>
                     <h2 class="text-3xl font-extrabold text-udelasDark">Recursos Académicos</h2>
-                    <div class="h-1 w-24 bg-udelasLight mx-auto rounded"></div>
+                    <div class="h-1 w-24 bg-fesdhGold mx-auto rounded"></div>
                     <p class="text-sm text-slate-500 max-w-xl mx-auto">Accede directamente a nuestras carpetas oficiales en la nube para consultar la documentación actualizada.</p>
                 </div>
 
@@ -334,15 +335,15 @@
                     <!-- Tarjeta 1: Horarios -->
                     <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-md transition">
                         <div class="space-y-3">
-                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-udelasDark text-xl">
+                            <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-fesdhGold text-xl">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </div>
                             <h3 class="text-base font-bold text-udelasDark">Horarios de Clases</h3>
                             <p class="text-xs text-slate-500">Consulta las programaciones horarias, salones y asignaturas correspondientes al semestre en curso.</p>
                         </div>
                         <div class="pt-5">
-                            <a href="https://drive.google.com/drive/folders/1Ze0iqxqlMQutxiQj03oj0ESHU9HY7P1q?usp=drive_link" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-udelasLight transition shadow-sm">
-                                <i class="fa-solid fa-folder-open mr-1.5 text-udelasLight"></i> VER HORARIOS
+                            <a href="https://drive.google.com/drive/folders/1Ze0iqxqlMQutxiQj03oj0ESHU9HY7P1q?usp=drive_link" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-fesdhGold transition shadow-sm">
+                                <i class="fa-solid fa-folder-open mr-1.5 text-fesdhGold"></i> VER HORARIOS
                             </a>
                         </div>
                     </div>
@@ -350,15 +351,15 @@
                     <!-- Tarjeta 2: Boletines -->
                     <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-md transition">
                         <div class="space-y-3">
-                            <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 text-xl">
+                            <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-fesdhGold text-xl">
                                 <i class="fa-solid fa-newspaper"></i>
                             </div>
                             <h3 class="text-base font-bold text-udelasDark">Boletines Informativos</h3>
                             <p class="text-xs text-slate-500">Mantente al día con los comunicados oficiales, eventos, efemérides y noticias de la FESDH.</p>
                         </div>
                         <div class="pt-5">
-                            <a href="https://drive.google.com/drive/folders/1tgV15si_iRAK8cJ2zb8hV6KGaXCuDUTX?usp=drive_link" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-udelasLight transition shadow-sm">
-                                <i class="fa-solid fa-folder-open mr-1.5 text-udelasLight"></i> VER BOLETINES
+                            <a href="https://drive.google.com/drive/folders/1tgV15si_iRAK8cJ2zb8hV6KGaXCuDUTX?usp=drive_link" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-fesdhGold transition shadow-sm">
+                                <i class="fa-solid fa-folder-open mr-1.5 text-fesdhGold"></i> VER BOLETINES
                             </a>
                         </div>
                     </div>
@@ -366,15 +367,15 @@
                     <!-- Tarjeta 3: Formatos -->
                     <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-md transition">
                         <div class="space-y-3">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 text-xl">
+                            <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-fesdhGold text-xl">
                                 <i class="fa-solid fa-file-lines"></i>
                             </div>
                             <h3 class="text-base font-bold text-udelasDark">Formatos y Guías</h3>
                             <p class="text-xs text-slate-500">Consulta solicitudes de trámites, guías de anteproyectos, plantillas y formularios estudiantiles.</p>
                         </div>
                         <div class="pt-5">
-                            <a href="https://drive.google.com/drive/folders/1k_IS5Tm1k36PWgNLHED-a2o5z1gA1SY7?usp=drive_link" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-udelasLight transition shadow-sm">
-                                <i class="fa-solid fa-folder-open mr-1.5 text-udelasLight"></i> VER FORMATOS
+                            <a href="https://drive.google.com/drive/folders/1k_IS5Tm1k36PWgNLHED-a2o5z1gA1SY7?usp=drive_link" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 text-xs font-bold bg-white border border-slate-300 text-udelasDark rounded-xl hover:bg-slate-100 hover:text-fesdhGold transition shadow-sm">
+                                <i class="fa-solid fa-folder-open mr-1.5 text-fesdhGold"></i> VER FORMATOS
                             </a>
                         </div>
                     </div>
@@ -389,17 +390,17 @@
                     <div class="space-y-4">
                         <h3 class="text-xl font-bold text-udelasDark">Contacto Directo</h3>
                         <p class="text-sm text-slate-700 font-semibold leading-relaxed">
-                            <i class="fa-solid fa-map-location-dot text-udelasLight mr-2"></i> Edificio 803, Universidad Especializada de las Américas, Facultad de Educación Social y Desarrollo Humano.
+                            <i class="fa-solid fa-map-location-dot text-fesdhGold mr-2"></i> Edificio 803, Universidad Especializada de las Américas, Facultad de Educación Social y Desarrollo Humano.
                         </p>
                         <p class="text-sm text-slate-700 font-semibold">
-                            <i class="fa-solid fa-phone text-udelasLight mr-2"></i> 501-1084 (Secretaría Administrativa)
+                            <i class="fa-solid fa-phone text-fesdhGold mr-2"></i> 501-1084 (Secretaría Administrativa)
                         </p>
                         <p class="text-sm text-slate-700 font-semibold">
-                            <i class="fa-solid fa-envelope text-udelasLight mr-2"></i> Correo: Por confirmar
+                            <i class="fa-solid fa-envelope text-fesdhGold mr-2"></i> Correo: Por confirmar
                         </p>
                     </div>
                     <a href="https://maps.app.goo.gl/dqXXeov1bVw7z7Vz9" target="_blank" class="w-full py-3.5 text-center text-sm font-bold bg-udelasDark text-white hover:bg-slate-800 rounded-xl transition shadow-md block">
-                        <i class="fa-solid fa-route mr-1 text-udelasLight"></i> VER EN GOOGLE MAPS
+                        <i class="fa-solid fa-route mr-1 text-fesdhGold"></i> VER EN GOOGLE MAPS
                     </a>
                 </div>
                 <div class="lg:col-span-7 min-h-[380px] bg-white border p-2 rounded-3xl shadow-xl overflow-hidden relative flex">
@@ -410,7 +411,7 @@
     </main>
 
     <!-- FOOTER INSTITUCIONAL LIMPIO -->
-    <footer class="bg-slate-950 text-white pt-16 pb-12 px-4 border-t border-slate-900 shadow-inner">
+    <footer class="bg-udelasDark text-white pt-16 pb-12 px-4 border-t border-slate-900 shadow-inner">
         <div class="max-w-4xl mx-auto text-center space-y-6">
             
             <div class="space-y-3">
@@ -418,11 +419,11 @@
                 <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">Formando los profesionales de excelencia social, científica y humanística que el desarrollo nacional demanda.</p>
             </div>
 
-            <div class="h-[1px] w-full bg-slate-900"></div>
+            <div class="h-[1px] w-full bg-slate-800"></div>
 
-            <p class="text-[11px] text-slate-500 font-medium tracking-wide">
+            <p class="text-[11px] text-slate-400 font-medium tracking-wide">
                 FESDH © 2026. Sitio Informativo Autorizado de la Facultad. <br class="sm:hidden"> Todos los derechos reservados. 
-                Visite portal oficial: <a href="https://www.udelas.ac.pa" target="_blank" class="text-udelasLight font-semibold hover:underline">udelas.ac.pa</a>
+                Visite portal oficial: <a href="https://www.udelas.ac.pa" target="_blank" class="text-fesdhGold font-semibold hover:underline">udelas.ac.pa</a>
             </p>
         </div>
     </footer>
@@ -504,36 +505,36 @@
                 <div class="space-y-3 pt-2">
                     <h2 class="text-xl sm:text-2xl font-extrabold text-udelasDark leading-tight pr-6">${c.titulo}</h2>
                     <div class="flex flex-wrap gap-3">
-                        <div class="inline-flex items-center space-x-2 bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-xl text-xs font-bold text-udelasDark shadow-sm">
-                            <i class="fa-solid fa-clock text-udelasLight"></i>
+                        <div class="inline-flex items-center space-x-2 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-bold text-udelasDark shadow-sm">
+                            <i class="fa-solid fa-clock text-fesdhGold"></i>
                             <span>Duración: ${c.duracion}</span>
                         </div>
-                        <div class="inline-flex items-center space-x-2 bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-xl text-xs font-bold text-udelasDark shadow-sm">
-                            <i class="fa-solid fa-graduation-cap text-udelasLight"></i>
+                        <div class="inline-flex items-center space-x-2 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-bold text-udelasDark shadow-sm">
+                            <i class="fa-solid fa-graduation-cap text-fesdhGold"></i>
                             <span>Modalidad: ${c.modalidad}</span>
                         </div>
                     </div>
                 </div>
                 <p class="text-sm text-udelasDark/90 font-medium leading-relaxed border-t pt-4">${c.descripcion}</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-blue-50/40 p-4 rounded-xl border border-blue-100 text-xs">
-                        <h4 class="font-bold text-udelasDark mb-2 flex items-center"><i class="fa-solid fa-right-to-bracket mr-1.5 text-udelasLight"></i> PERFIL DE INGRESO</h4>
+                    <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-200/60 text-xs">
+                        <h4 class="font-bold text-udelasDark mb-2 flex items-center"><i class="fa-solid fa-right-to-bracket mr-1.5 text-fesdhGold"></i> PERFIL DE INGRESO</h4>
                         <ul class="space-y-1.5">${ingresoLi}</ul>
                     </div>
-                    <div class="bg-blue-50/40 p-4 rounded-xl border border-blue-100 text-xs">
-                        <h4 class="font-bold text-udelasDark mb-2 flex items-center"><i class="fa-solid fa-id-card mr-1.5 text-udelasLight"></i> PERFIL DE EGRESO</h4>
+                    <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-200/60 text-xs">
+                        <h4 class="font-bold text-udelasDark mb-2 flex items-center"><i class="fa-solid fa-id-card mr-1.5 text-fesdhGold"></i> PERFIL DE EGRESO</h4>
                         <p class="text-udelasDark font-medium leading-relaxed">${c.egreso}</p>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-blue-50/40 p-4 rounded-xl border border-blue-100 text-xs">
-                        <h4 class="font-bold text-udelasDark mb-2 flex items-center"><i class="fa-solid fa-briefcase mr-1.5 text-udelasLight"></i> CAMPO LABORAL</h4>
+                    <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-200/60 text-xs">
+                        <h4 class="font-bold text-udelasDark mb-2 flex items-center"><i class="fa-solid fa-briefcase mr-1.5 text-fesdhGold"></i> CAMPO LABORAL</h4>
                         <p class="text-udelasDark font-medium leading-relaxed">${c.campo}</p>
                     </div>
-                    <div class="bg-blue-50/40 p-4 rounded-xl border border-blue-100 text-xs space-y-1.5">
-                        <h4 class="font-bold text-udelasDark mb-2 flex items-center"><i class="fa-solid fa-address-book mr-1.5 text-udelasLight"></i> COORDINACIÓN</h4>
+                    <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-200/60 text-xs space-y-1.5">
+                        <h4 class="font-bold text-udelasDark mb-2 flex items-center"><i class="fa-solid fa-address-book mr-1.5 text-fesdhGold"></i> COORDINACIÓN</h4>
                         <p class="text-udelasDark font-medium"><b>Coordinador:</b> ${c.coordinacion.nombre}</p>
-                        <p class="text-udelasDark font-medium"><b>Correo:</b> <a class="text-udelasLight underline font-bold" href="mailto:${c.coordinacion.correo}">${c.coordinacion.correo}</a></p>
+                        <p class="text-udelasDark font-medium"><b>Correo:</b> <a class="text-fesdhGold underline font-bold" href="mailto:${c.coordinacion.correo}">${c.coordinacion.correo}</a></p>
                         <p class="text-udelasDark font-medium"><b>Horario:</b> ${c.coordinacion.horario}</p>
                     </div>
                 </div>
@@ -546,16 +547,16 @@
             const content = document.getElementById('modal-content');
             content.innerHTML = `
                 <div class="space-y-2 border-b pb-3 pt-2">
-                    <span class="text-xs font-bold text-udelasLight uppercase tracking-wider block">Reseña Histórica Oficial</span>
+                    <span class="text-xs font-bold text-fesdhGold uppercase tracking-wider block">Reseña Histórica Oficial</span>
                     <h2 class="text-xl font-bold text-udelasDark leading-tight">Facultad de Educación Social y Desarrollo Humano</h2>
                 </div>
                 <div class="space-y-4 text-xs leading-relaxed">
-                    <div class="bg-blue-50/40 p-4 rounded-xl border border-blue-100 space-y-2">
-                        <h4 class="font-bold text-udelasDark text-sm flex items-center"><i class="fa-solid fa-university text-udelasLight mr-2"></i> Origen Institucional (UDELAS)</h4>
+                    <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-200/60 space-y-2">
+                        <h4 class="font-bold text-udelasDark text-sm flex items-center"><i class="fa-solid fa-university text-fesdhGold mr-2"></i> Origen Institucional (UDELAS)</h4>
                         <p class="text-udelasDark font-medium">La Universidad Especializada de las Américas (UDELAS) fue creada en 1997 mediante la Ley 40, como la cuarta universidad oficial de la República de Panamá.</p>
                     </div>
-                    <div class="bg-blue-50/40 p-4 rounded-xl border border-blue-100 space-y-2">
-                        <h4 class="font-bold text-udelasDark text-sm flex items-center"><i class="fa-solid fa-timeline text-udelasLight mr-2"></i> Evolución y Creación de la FESDH</h4>
+                    <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-200/60 space-y-2">
+                        <h4 class="font-bold text-udelasDark text-sm flex items-center"><i class="fa-solid fa-timeline text-fesdhGold mr-2"></i> Evolución y Creación de la FESDH</h4>
                         <p class="text-udelasDark font-medium">En el año 2015 se reorganiza la estructura académica, dando origen a la Facultad de Educación Social y Desarrollo Humano (FESDH).</p>
                     </div>
                 </div>
@@ -568,21 +569,21 @@
             const content = document.getElementById('modal-content');
             content.innerHTML = `
                 <div class="space-y-2 border-b pb-3 pt-2">
-                    <span class="text-xs font-bold text-udelasLight uppercase tracking-wider block">Atención Integral Estudiantil</span>
+                    <span class="text-xs font-bold text-fesdhGold uppercase tracking-wider block">Atención Integral Estudiantil</span>
                     <h2 class="text-xl font-bold text-udelasDark leading-tight">Centro de Orientación y Atención Socioeducativa (COASES)</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-blue-50/40 p-5 rounded-2xl border border-blue-100 text-xs">
-                        <h4 class="font-bold text-udelasDark text-sm mb-3 flex items-center"><i class="fa-solid fa-hand-holding-heart text-udelasLight mr-2"></i> Servicios Disponibles</h4>
+                    <div class="bg-amber-50/50 p-5 rounded-2xl border border-amber-200/60 text-xs">
+                        <h4 class="font-bold text-udelasDark text-sm mb-3 flex items-center"><i class="fa-solid fa-hand-holding-heart text-fesdhGold mr-2"></i> Servicios Disponibles</h4>
                         <ul class="space-y-2 text-udelasDark font-medium">
                             <li>• Consejería Psicológica.</li>
                             <li>• Tutorías Académicas.</li>
                             <li>• Apoyo en Desarrollo Personal.</li>
                         </ul>
                     </div>
-                    <div class="bg-blue-50/40 p-5 rounded-2xl border border-blue-100 text-xs">
-                        <h4 class="font-bold text-udelasDark text-sm mb-3"><i class="fa-solid fa-address-book text-udelasLight mr-2"></i> Contáctanos</h4>
-                        <p class="text-udelasDark font-semibold">WhatsApp: <a href="https://wa.me/50769852731" target="_blank" class="text-udelasLight hover:underline font-bold">6985-2731</a></p>
+                    <div class="bg-amber-50/50 p-5 rounded-2xl border border-amber-200/60 text-xs">
+                        <h4 class="font-bold text-udelasDark text-sm mb-3"><i class="fa-solid fa-address-book text-fesdhGold mr-2"></i> Contáctanos</h4>
+                        <p class="text-udelasDark font-semibold">WhatsApp: <a href="https://wa.me/50769852731" target="_blank" class="text-fesdhGold hover:underline font-bold">6985-2731</a></p>
                         <p class="text-udelasDark font-semibold">Correo: coases@udelas.ac.pa</p>
                     </div>
                 </div>
