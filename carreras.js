@@ -83,8 +83,8 @@ const infoCarreras = {
       "egreso": "Profesionales idóneos con competencias para aplicar conocimientos estratégicos orientados a reducir defunciones y traumatismos causados por accidentes de tránsito.",
       "campo": "ATTT, Policía Nacional de Tránsito, MOP, Fiscalías, Municipios, MiBus, Metro de Panamá y escuelas de manejo.",
       "coordinacion": {
-        "nombre": "Mgtr. Rosa Anabella De Gracia",
-        "correo": "rosa.gracia.749@udelas.ac.pa",
+        "nombre": "Lic. Adolfo de la Rosa Ubarte",
+        "correo": "adolfo.drosa@udelas.ac.pa",
         "horario": "Lunes a Viernes de 8:00 a.m. a 4:00 p.m."
       },
       "duracion": "4 años (8 semestres y 3 veranos)",
@@ -100,8 +100,8 @@ const infoCarreras = {
       "egreso": "El egresado es un profesional competente para aplicar el método científico en la investigación criminal, fijar evidencias y coordinar plans estratégicos de seguridad.",
       "campo": "Ministerio Público, Dirección de Investigación Judicial (DIJ), IMELCF, empresas de seguridad privada y departamentos de seguridad corporativa.",
       "coordinacion": {
-        "nombre": "Lic. Adolfo Antonio De La Rosa Ubarte",
-        "correo": "adolfo.rosa@udelas.ac.pa",
+        "nombre": "José Nicolas Ortega Valenzuela",
+        "correo": "jose.ortega.0@udelas.ac.pa",
         "horario": "Lunes a Viernes de 8:00 a.m. a 4:00 p.m."
       },
       "duracion": "4 años",
@@ -134,8 +134,8 @@ const infoCarreras = {
       "egreso": "Información en actualización por la facultad.",
       "campo": "Centros culturales, museos, instituciones de patrimonio histórico y organizaciones folclóricas.",
       "coordinacion": {
-        "nombre": "Por asignar / En actualización",
-        "correo": "fesdh@udelas.ac.pa",
+        "nombre": "Magíster Denia M. Manguelis G",
+        "correo": "denia.manguelis.2055@udelas.ac.pa",
         "horario": "Lunes a Viernes de 8:00 a.m. a 4:00 p.m."
       },
       "duracion": "Por definir",
