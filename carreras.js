@@ -83,7 +83,7 @@ const infoCarreras = {
       "egreso": "Profesionales idóneos con competencias para aplicar conocimientos estratégicos orientados a reducir defunciones y traumatismos causados por accidentes de tránsito.",
       "campo": "ATTT, Policía Nacional de Tránsito, MOP, Fiscalías, Municipios, MiBus, Metro de Panamá y escuelas de manejo.",
       "coordinacion": {
-        "nombre": "Lic. Adolfo de la Rosa Ubarte",
+        "nombre": "Lic. Adolfo De la Rosa Ubarte",
         "correo": "adolfo.drosa@udelas.ac.pa",
         "horario": "Lunes a Viernes de 8:00 a.m. a 4:00 p.m."
       },
